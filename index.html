@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Max Conine - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Max Conine – Portfolio</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <header>
-        <h1>Max Conine</h1>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Max Conine</h1>
+  </header>
 
-    <section id="hero">
-        <h2>Welcome to my Portfolio</h2>
-        <p>A brief introduction about Max Conine and his skills.</p>
-        <img src="IMG_2414.jpeg" alt="Cool-Image" class="hero-image">
+  <nav>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="hero" class="section">
+      <h2>Welcome to my Portfolio</h2>
+      <p>A brief introduction about Max Conine and his skills.</p>
+      <img src="IMG_2414.jpeg" alt="Portrait of Max Conine" class="hero-image" />
     </section>
 
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="project">
-            <img src="project1.jpg" alt="Project 1">
-            <h3>Project 1 Title</h3>
-            <p>Description of Project 1.</p>
-            <a href="#">View Project</a>
-        </div>
-        <div class="project">
-            <img src="project2.jpg" alt="Project 2">
-            <h3>Project 2 Title</h3>
-            <p>Description of Project 2.</p>
-            <a href="#">View Project</a>
-        </div>
-        <div class="project">
-            <img src="project3.jpg" alt="Project 3">
-            <h3>Project 3 Title</h3>
-            <p>Description of Project 3.</p>
-            <a href="#">View Project</a>
-        </div>
+    <section id="projects" class="section">
+      <h2>My Projects</h2>
+      <div class="projects-grid">
+        <article class="project">
+          <img src="project1.jpg" alt="Screenshot of Project 1" />
+          <h3>Project 1 Title</h3>
+          <p>Description of Project 1.</p>
+          <a href="#">View Project</a>
+        </article>
+        <article class="project">
+          <img src="project2.jpg" alt="Screenshot of Project 2" />
+          <h3>Project 2 Title</h3>
+          <p>Description of Project 2.</p>
+          <a href="#">View Project</a>
+        </article>
+        <article class="project">
+          <img src="project3.jpg" alt="Screenshot of Project 3" />
+          <h3>Project 3 Title</h3>
+          <p>Description of Project 3.</p>
+          <a href="#">View Project</a>
+        </article>
+      </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>More detailed information about Max Conine's background, skills, and experience.</p>
+    <section id="about" class="section">
+      <h2>About Me</h2>
+      <p>More detailed information about Max Conine’s background, skills, and experience.</p>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Max Conine's contact information or a contact form.</p>
-        <p>Email: max.conine@example.com</p>
-        <p>LinkedIn: linkedin.com/in/maxconine</p>
+    <section id="contact" class="section">
+      <h2>Contact Me</h2>
+      <p>Email: <a href="mailto:max.conine@example.com">max.conine@example.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/maxconine" target="_blank">linkedin.com/in/maxconine</a></p>
     </section>
+  </main>
 
-    <footer>
-        <p>&copy; 2024 Max Conine</p>
-    </footer>
+  <footer>
+    <p>&copy; 2024 Max Conine</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
