@@ -1,92 +1,53 @@
-/* Fixed header/nav as a dark grey bar */
+/* style.css */
+/* ——— Global & Header/Nav ——— */
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #333;              /* dark grey */
-  color: #fff;                   /* make any header text white */
+  position: fixed; top: 0; width: 100%;
+  background: #333; color: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.5);
   z-index: 1000;
 }
-
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 0.75rem 1rem;
 }
-
-/* Title in header */
-.header-container h1 {
-  margin: 0;
-  color: #fff;                   /* ensure your name is white */
-}
-
-/* Nav list */
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Nav links */
+.header-container h1 { margin: 0; color: #fff; }
+nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
 nav a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #fff;                   /* white links */
-  text-decoration: none;
-  font-weight: bold;
+  display: block; padding: 0.5rem 1rem;
+  color: #fff; text-decoration: none; font-weight: bold;
 }
+nav a:hover { background: #444; border-radius: 4px; }
 
-/* Hover state */
-nav a:hover {
-  background: #444;              /* slightly lighter grey on hover */
-  border-radius: 4px;
-}
-
+/* ——— Main Sections ——— */
 main { padding-top: 4rem; }
 .section {
-  padding: 2rem 1rem;
-  background: #fff;
-  margin: 1rem auto;
-  max-width: 1200px;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  padding: 2rem 1rem; background: #fff;
+  margin: 1rem auto; max-width: 1200px;
+  border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
-/* Hero portrait smaller */
+/* ——— Hero ——— */
 .hero-image {
-  width: 150px;
-  margin: 1.5rem auto;
-  display: block;
-  border-radius: 8px;
+  width: 150px; margin: 1.5rem auto;
+  display: block; border-radius: 8px;
 }
 
-/* Projects grid */
+/* ——— Projects Grid & Details ——— */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
   gap: 1rem;
 }
-
-/* Summary overlay & title */
 .project summary {
-  position: relative;
-  padding: 0;
-  cursor: pointer;
+  position: relative; padding: 0; cursor: pointer;
 }
 .project summary img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
+  width: 100%; height: 220px;
+  object-fit: cover; display: block;
 }
 .project summary::before {
-  content: "";
-  position: absolute; inset: 0;
+  content: ""; position: absolute; inset: 0;
   background: rgba(255,255,255,0.8);
   transition: background 0.5s ease;
 }
@@ -94,59 +55,92 @@ main { padding-top: 4rem; }
   background: rgba(255,255,255,0);
 }
 .project summary h3 {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  margin: 0;
-  padding: 4px 8px;
+  position: absolute; bottom: 10px; left: 10px;
+  margin: 0; padding: 4px 8px;
   background: rgba(255,255,255,0.7);
-  border-radius: 4px;
-  z-index: 2;
+  border-radius: 4px; z-index: 2;
 }
-
-/* Slide‑down animation */
 .project-details {
-  max-height: 0;
-  overflow: hidden;
+  max-height: 0; overflow: hidden;
   transition: max-height 0.5s ease;
 }
 details[open] .project-details {
-  max-height: 600px; /* enough to show the contents */
+  max-height: 1000px;
 }
 
-/* Uniform small previews */
+/* ——— Image Gallery Thumbnails ——— */
 .image-gallery {
-  display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px,1fr));
+  gap: 0.5rem; margin-top: 0.5rem;
 }
 .image-gallery img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+  width: 100%; height: 80px;
+  object-fit: cover; cursor: pointer;
+  border-radius: 4px; transition: transform .2s ease;
+}
+.image-gallery img:hover { transform: scale(1.1); }
+
+/* ——— Lightbox Modal & Arrows ——— */
+#lightbox {
+    display: none;              /* hidden on load */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.8);
+    align-items: center;       /* will apply when JS sets display:flex */
+    justify-content: center;
+    z-index: 1000;
+}
+#lightbox img {
+  max-width: 90%; max-height: 90%;
   border-radius: 4px;
 }
+#lightbox .close {
+  position: absolute; top: 20px; right: 30px;
+  font-size: 2em; color: white; cursor: pointer;
+}
+#lightbox .arrow {
+  position: absolute; top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5em; color: white;
+  cursor: pointer; user-select: none; padding: 0 10px;
+}
+#lightbox .prev { left: 20px; }
+#lightbox .next { right: 20px; }
+#lightbox .arrow:hover { color: #ccc; }
 
-/* Shrink the Bass Guitar image in project details */
-.project-details .crop-cover {
-  width: 120px;            /* adjust width as desired */
-  height: 80px;            /* adjust height as desired */
-  object-fit: cover;       /* keep the crop/center behavior */
-  border-radius: 4px;
-  display: block;
-  margin: 0.5rem auto;     /* center it with a little vertical spacing */
+#lightbox-caption {
+  color: #fff;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 90%;
 }
 
-/* Music icons & video */
-.icon {
-  width: 24px; height: 24px; margin-right: 0.5rem;
-}
-.video-player, iframe {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  border-radius: 4px;
+
+/* ——— Bass‑Guitar Crop ——— */
+.crop-cover {
+  width: 120px; height: 80px;
+  object-fit: cover; border-radius: 4px;
+  display: block; margin: 0.5rem auto;
 }
 
-/* Footer (unchanged) */
+/* ——— Music Page Helpers ——— */
+.music-links {
+  text-align: center;
+  margin: 15px 0;
+}
+.music-icon {
+  width: 34px;
+  height: 34px;
+  margin: 0 10px;
+}
+.video-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ——— Footer ——— */
 footer {
   text-align: center;
   padding: 1rem 0;
