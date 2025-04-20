@@ -52,7 +52,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       updateLightbox();
     });
 
-      // **new** keyboard support
+      // keyboard support
   document.addEventListener('keydown', e => {
     if (lightbox.style.display !== 'flex') return;
     if (e.key === 'ArrowLeft')  prevBtn.click();
