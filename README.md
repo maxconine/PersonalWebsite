@@ -1,1 +1,2 @@
-A website I made about myself.
+Access the website at https://maxconine.netlify.app
+
