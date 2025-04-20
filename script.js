@@ -1,5 +1,3 @@
-// script.js
-
 // Smooth‑scroll for in‑page anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
