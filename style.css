@@ -27,6 +27,11 @@ main { padding-top: 4rem; }
   border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
 }
 
+/* Highlight the hero block when clicked */
+#hero.highlight {
+  background-color: yellow !important;
+}
+
 /* ——— Hero ——— */
 .hero-image {
   width: 150px; margin: 1.5rem auto;
@@ -127,12 +132,12 @@ details[open] .project-details {
 
 /* ——— Music Page Helpers ——— */
 .music-links {
-  text-align: center;
+  text-align: left;
   margin: 15px 0;
 }
 .music-icon {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   margin: 0 10px;
 }
 .video-container {

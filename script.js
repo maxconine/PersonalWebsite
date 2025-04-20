@@ -60,5 +60,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (e.key === 'Escape')     closeBtn.click();
   });
 
+  const heroImg = document.querySelector('.hero-image');
+  if (heroImg) {
+    heroImg.addEventListener('click', () => {
+      const heroSection = document.getElementById('hero');
+      heroSection.classList.toggle('highlight');
+    });
+  }
+
   });
   
