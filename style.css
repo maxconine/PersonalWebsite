@@ -1,23 +1,67 @@
-/* style.css */
+
 /* ——— Global & Header/Nav ——— */
 header {
-  position: fixed; top: 0; width: 100%;
-  background: #333; color: #fff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #333;
+  color: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.5);
   z-index: 1000;
 }
+
 .header-container {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 0.75rem 1rem;
 }
-.header-container h1 { margin: 0; color: #fff; }
-nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
-nav a {
-  display: block; padding: 0.5rem 1rem;
-  color: #fff; text-decoration: none; font-weight: bold;
+
+.header-container h1 {
+  margin: 0;
+  color: #fff;
 }
-nav a:hover { background: #444; border-radius: 4px; }
+
+/* make the nav list scrollable on small screens */
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;                /* prevent wrapping to next line */
+  overflow-x: auto;                 /* allow horizontal scroll */
+  -webkit-overflow-scrolling: touch;/* smooth momentum on iOS */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-container nav ul li {
+  flex: 0 0 auto;                   /* don’t let items shrink below their content */
+}
+
+nav a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  background: #444;
+  border-radius: 4px;
+}
+
+nav ul::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+}
 
 /* ——— Main Sections ——— */
 main { padding-top: 4rem; }
