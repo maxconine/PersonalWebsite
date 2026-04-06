@@ -10,7 +10,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   // Lightbox gallery with prev/next
   document.addEventListener('DOMContentLoaded', () => {
     const lightbox    = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
+    const lightboxImg = lightbox.querySelector('.lightbox-image');
     const closeBtn    = lightbox.querySelector('.close');
     const prevBtn     = lightbox.querySelector('.prev');
     const nextBtn     = lightbox.querySelector('.next');
