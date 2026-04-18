@@ -141,7 +141,11 @@ details[open] .project-details {
     z-index: 1000;
 }
 #lightbox img {
-  max-width: 90%; max-height: 90%;
+  max-width: min(92vw, 960px);
+  max-height: 78vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
   border-radius: 4px;
 }
 #lightbox .close {
