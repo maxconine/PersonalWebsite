@@ -95,6 +95,9 @@ main { padding-top: 4rem; }
   width: 100%; height: 220px;
   object-fit: cover; display: block;
 }
+.project summary img.cover-shift-down {
+  object-position: center 10%;
+}
 .project summary::before {
   content: ""; position: absolute; inset: 0;
   background: rgba(255,255,255,0.8);
@@ -114,7 +117,16 @@ main { padding-top: 4rem; }
   transition: max-height 0.5s ease;
 }
 details[open] .project-details {
-  max-height: 1000px;
+  max-height: 5000px;
+}
+
+.project-details ul {
+  margin: 0.5rem 0 1rem 1.25rem;
+  padding: 0;
+}
+
+.project-details li {
+  margin-bottom: 0.75rem;
 }
 
 /* ——— Image Gallery Thumbnails ——— */
@@ -129,6 +141,13 @@ details[open] .project-details {
   border-radius: 4px; transition: transform .2s ease;
 }
 .image-gallery img:hover { transform: scale(1.1); }
+.image-gallery img.featured-image {
+  grid-column: 1 / -1;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+.image-gallery img.featured-image:hover { transform: none; }
 
 /* ——— Lightbox Modal & Arrows ——— */
 #lightbox {
