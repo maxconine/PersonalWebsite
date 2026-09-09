@@ -73,7 +73,7 @@ main { padding-top: 4rem; }
 
 /* Highlight the hero block when clicked */
 #hero.highlight {
-  background-color: yellow !important;
+  background-color: #FE9024 !important;
 }
 
 /* ——— Hero ——— */

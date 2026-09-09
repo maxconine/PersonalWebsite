@@ -61,8 +61,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   const heroImg = document.querySelector('.hero-image');
   if (heroImg) {
     heroImg.addEventListener('click', () => {
-      const heroSection = document.getElementById('hero');
-      heroSection.classList.toggle('highlight');
+      const fullSelfImage = './images/full%20self.jpg';
+      currentGallery = [{ src: fullSelfImage, alt: 'Full portrait of Max Conine' }];
+      currentIndex = 0;
+      updateLightbox();
+      lightbox.style.display = 'flex';
     });
   }
 
