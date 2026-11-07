@@ -1,12 +1,43 @@
+/* ——— Base ——— */
+:root {
+  --bg: #f3f3f1;
+  --surface: #fff;
+  --text: #222;
+  --muted: #666;
+  --accent: #c25e00;
+  --header: #2b2b2b;
+}
 
-/* ——— Global & Header/Nav ——— */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { line-height: 1.25; }
+h2 { margin-top: 0; font-size: 1.6rem; }
+
+a { color: var(--accent); }
+a:hover { text-decoration-thickness: 2px; }
+
+img { max-width: 100%; }
+
+/* ——— Header/Nav ——— */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #333;
+  background: var(--header);
   color: #fff;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
@@ -16,185 +47,286 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   padding: 0.75rem 1rem;
 }
 
 .header-container h1 {
   margin: 0;
+  font-size: 1.4rem;
   color: #fff;
+  white-space: nowrap;
 }
 
 /* make the nav list scrollable on small screens */
 nav ul {
   display: flex;
-  flex-wrap: nowrap;                /* prevent wrapping to next line */
-  overflow-x: auto;                 /* allow horizontal scroll */
-  -webkit-overflow-scrolling: touch;/* smooth momentum on iOS */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.header-container nav ul li {
-  flex: 0 0 auto;                   /* don’t let items shrink below their content */
-}
+.header-container nav ul li { flex: 0 0 auto; }
 
 nav a {
   display: block;
   padding: 0.5rem 1rem;
   color: #fff;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-nav a:hover {
-  background: #444;
-  border-radius: 4px;
-}
+nav a:hover { background: #444; }
 
-nav ul::-webkit-scrollbar {
-  display: none;
-}
+nav ul::-webkit-scrollbar { display: none; }
 
 @media (max-width: 600px) {
+  .header-container h1 { font-size: 1.15rem; }
   nav a {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.6rem;
     font-size: 0.9rem;
   }
 }
 
 /* ——— Main Sections ——— */
-main { padding-top: 4rem; }
+main, .container { padding: 4.5rem 1rem 0; }
+
 .section {
-  padding: 2rem 1rem; background: #fff;
-  margin: 1rem auto; max-width: 1200px;
-  border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  background: var(--surface);
+  margin: 1rem auto;
+  max-width: 1200px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  scroll-margin-top: 5rem;
 }
 
-/* Highlight the hero block when clicked */
-#hero.highlight {
-  background-color: #FE9024 !important;
+@media (max-width: 600px) {
+  main, .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+  .section { padding: 1.5rem 1rem; }
+}
+
+/* stack the title above the nav on phones so no link gets cut off */
+@media (max-width: 480px) {
+  .header-container {
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.5rem 0.5rem 0.25rem;
+  }
+  nav ul { justify-content: center; }
+  main, .container { padding-top: 6rem; }
+  .section { scroll-margin-top: 6.5rem; }
 }
 
 /* ——— Hero ——— */
-.hero-image {
-  width: 150px; margin: 1.5rem auto;
-  display: block; border-radius: 8px;
+.hero-layout {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-/* ——— Projects Grid & Details ——— */
+.hero-text { max-width: 70ch; }
+.hero-text p { margin: 0 0 1rem; }
+
+.hero-tagline {
+  color: var(--muted);
+  font-size: 1.1rem;
+  margin-top: -0.25rem !important;
+}
+
+.hero-image {
+  flex: 0 0 auto;
+  width: 180px;
+  display: block;
+  cursor: zoom-in;
+}
+
+@media (max-width: 700px) {
+  .hero-layout { flex-direction: column; align-items: center; }
+  .hero-image { width: 150px; }
+}
+
+/* ——— Projects Grid & Cards ——— */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 1.25rem;
+  align-items: start;
 }
+
+.project {
+  background: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.project:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.15); }
+
 .project summary {
-  position: relative; padding: 0; cursor: pointer;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  list-style: none;
+  overflow: hidden;
 }
+.project summary::-webkit-details-marker { display: none; }
+
 .project summary img {
-  width: 100%; height: 220px;
-  object-fit: cover; display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
 }
-.project summary img.cover-shift-down {
-  object-position: center 10%;
+.project summary:hover img { transform: scale(1.04); }
+.project summary img.cover-shift-down { object-position: center 10%; }
+
+/* dark gradient so the title is readable without washing out the photo */
+.project summary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 40%, rgba(0,0,0,0) 65%);
+  pointer-events: none;
 }
-.project summary::before {
-  content: ""; position: absolute; inset: 0;
-  background: rgba(255,255,255,0.8);
-  transition: background 0.5s ease;
+
+.card-label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0.75rem 0.9rem;
+  color: #fff;
+  z-index: 2;
 }
-.project summary:hover::before {
-  background: rgba(255,255,255,0);
-}
+
 .project summary h3 {
-  position: absolute; bottom: 10px; left: 10px;
-  margin: 0; padding: 4px 8px;
-  background: rgba(255,255,255,0.7);
-  border-radius: 4px; z-index: 2;
+  margin: 0;
+  font-size: 1.15rem;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
 }
-.project-details {
-  max-height: 0; overflow: hidden;
-  transition: max-height 0.5s ease;
+
+.card-meta {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.92;
+  line-height: 1.35;
 }
-details[open] .project-details {
-  max-height: 5000px;
+
+.project summary:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
 }
+
+.project-details { padding: 0.25rem 1rem 1rem; }
 
 .project-details ul {
   margin: 0.5rem 0 1rem 1.25rem;
   padding: 0;
 }
 
-.project-details li {
-  margin-bottom: 0.75rem;
-}
+.project-details li { margin-bottom: 0.75rem; }
 
 /* ——— Image Gallery Thumbnails ——— */
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px,1fr));
-  gap: 0.5rem; margin-top: 0.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin: 0.75rem 0;
 }
 .image-gallery img {
-  width: 100%; height: 100px;
-  object-fit: cover; cursor: pointer;
-  border-radius: 4px; transition: transform .2s ease;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: zoom-in;
+  display: block;
+  transition: transform .2s ease, opacity .2s ease;
 }
-.image-gallery img:hover { transform: scale(1.1); }
+.image-gallery img:hover { transform: scale(1.04); opacity: 0.9; }
 .image-gallery img.featured-image {
   grid-column: 1 / -1;
   height: auto;
-  max-height: none;
   object-fit: contain;
 }
 .image-gallery img.featured-image:hover { transform: none; }
 
+/* ——— Responsive video embeds ——— */
+.video {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0.75rem 0;
+  overflow: hidden;
+  background: #000;
+}
+.video.vertical {
+  aspect-ratio: 9 / 16;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* ——— Lightbox Modal & Arrows ——— */
 #lightbox {
-    display: none;              /* hidden on load */
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.8);
-    align-items: center;       /* will apply when JS sets display:flex */
-    justify-content: center;
-    z-index: 1000;
+  display: none;              /* hidden on load */
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  align-items: center;        /* applies when JS sets display:flex */
+  justify-content: center;
+  z-index: 2000;
+}
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 #lightbox img {
-  max-width: min(92vw, 960px);
-  max-height: 78vh;
+  max-width: min(88vw, 1100px);
+  max-height: 82vh;
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: 4px;
 }
+#lightbox button {
+  background: none;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  line-height: 1;
+  padding: 0.5rem 0.75rem;
+}
+#lightbox button:hover { color: #ccc; }
+#lightbox button:focus-visible { outline: 2px solid #fff; }
 #lightbox .close {
-  position: absolute; top: 20px; right: 30px;
-  font-size: 2em; color: white; cursor: pointer;
+  position: absolute; top: 12px; right: 16px;
+  font-size: 2.25rem;
 }
 #lightbox .arrow {
   position: absolute; top: 50%;
   transform: translateY(-50%);
-  font-size: 2.5em; color: white;
-  cursor: pointer; user-select: none; padding: 0 10px;
+  font-size: 2.25rem;
+  user-select: none;
 }
-#lightbox .prev { left: 20px; }
-#lightbox .next { right: 20px; }
-#lightbox .arrow:hover { color: #ccc; }
+#lightbox .prev { left: 8px; }
+#lightbox .next { right: 8px; }
+#lightbox.single .arrow { display: none; }
 
 #lightbox-caption {
-  color: #fff;
-  font-size: 1rem;
-  margin-top: 0.5rem;
+  color: #eee;
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
   text-align: center;
-  max-width: 90%;
-}
-
-
-/* ——— Bass‑Guitar Crop ——— */
-.crop-cover {
-  width: 120px; height: 80px;
-  object-fit: cover; border-radius: 4px;
-  display: block; margin: 0.5rem auto;
+  max-width: 90vw;
 }
 
 /* ——— Music Page Helpers ——— */
@@ -205,17 +337,17 @@ details[open] .project-details {
 .music-icon {
   width: 38px;
   height: 38px;
-  margin: 0 10px;
+  margin: 0 10px 0 0;
 }
-.video-container {
-  text-align: center;
-  margin-top: 20px;
-}
+.music-page .video { max-width: 720px; margin: 1.25rem auto 0; }
 
 /* ——— Footer ——— */
 footer {
   text-align: center;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
   font-size: 0.9rem;
-  color: #666;
+  color: var(--muted);
 }
+
+.card-date { font-weight: 600; }
+

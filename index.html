@@ -20,7 +20,6 @@
           <li><a href="#hero">Home</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="music.html">Music</a></li>
-          <!-- <li><a href="#about">About</a></li> -->
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -29,93 +28,111 @@
 
   <main>
     <section id="hero" class="section">
-      <h2>Welcome to my website!</h2>
-      <p>Hi! I'm Max Conine. I'm an Engineering Major at Harvey Mudd College.</p>
+      <div class="hero-layout">
+        <img src="./images/thumbs/self.jpg" data-full="./images/full%20self.jpg" alt="Portrait of Max Conine" class="hero-image" decoding="async" fetchpriority="high" />
+        <div class="hero-text">
+          <h2>Hi, I'm Max Conine</h2>
+          <p class="hero-tagline">Engineering major at Harvey Mudd College</p>
 
-      <p>I'm from Boston MA. I love playing guitar, biking, building things, outdoor activities like
-        climbing and skiing, and peanut butter and jelly sandwiches. </p>
+          <p>This past summer I was a Mechatronics Intern at <a href="https://ultra.tech/" target="_blank" rel="noopener">Ultra</a>, building warehouse-deployable packing robots. I worked on several design projects, including a base box design that shipped, and improved manufacturability with custom jigs and testing devices.</p>
 
-      <p>Below are some projects I've worked on or am currently working on. Click each image to find out more</p>
-      <img src="./images/self.jpg" alt="Portrait of Max Conine" class="hero-image" decoding="async" fetchpriority="high" />
+          <p>The summer before that, I worked at <a href="https://www.exploravist.net/" target="_blank" rel="noopener">ExploraVist</a> doing software engineering and rapid prototyping to build a beta-testing version of the ExploraVist headset. I wrote C code to control peripherals, including buttons, the camera, speech-to-text, and text-to-speech, and designed the state machine that controls the device.</p>
+
+          <p>I'm from Boston, MA. I love playing guitar, biking, building things, climbing, skiing, and peanut butter and jelly sandwiches.</p>
+
+          <p>Below are some projects I've worked on or am currently working on. Click a project to find out more.</p>
+        </div>
+      </div>
     </section>
 
     <section id="projects" class="section">
       <h2>My Projects</h2>
       <div class="projects-grid">
 
-	<!-- Ultra Robotics -->
-    <details class="project">
-      <summary>
-        <img src="./images/Ultra/MAX ROBOT 5.5.jpg" alt="With the Ultra robot" class="cover-shift-down" loading="lazy" decoding="async">
-        <h3>Ultra Robotics</h3>
-      </summary>
-      <div class="project-details">
-        <p>I had an amazing time interning at Ultra Robotics. I spent the first half of the summer on the manufacturing team, learning how every part of their robots is assembled — soldering connectors and wiring, building PCBs, assembling arms — before moving into my own design projects and putting my own parts into production. It was exactly what I was hoping for: jumping into a fast-paced engineering environment and doing hands-on product development. By day two, I was already making cables we needed to ship robots out the door.</p>
-        <p>Beyond the hands-on work, it was rewarding to see how a high-performing team operates efficiently — CAD collaboration, task management software, work and assembly documentation, design reviews, clear communication, and fast-paced planning with realistic two-week sprints.</p>
-        <p>A few things I got to work on:</p>
-        <ul>
-          <li><strong>Torso wiring loom redesign</strong> — my first project. I designed a custom wiring loom that made assembly easier and added strain relief to the torso wires, cutting assembly time, improving robot reliability, and making field repairs easier.</li>
-          <li><strong>Base structure redesign</strong> — took the robot's base from an exposed, messy wiring to a protected, easy-to-assemble enclosure with clean panels and a glowing Ultra logo. Half a dozen design reviews later, I landed on a system I'm really proud of. (Unreleased for now, so no pictures yet — stay tuned!)</li>
-          <li><strong>Manufacturing tools</strong> — designed a cable quality checker that detects shorts and miswires in cables and robot arms, cutting troubleshooting time and helping us catch bad cables before assembly. This saved us hours of debugging for each robot with an issue. Also built a custom ammeter logger, homing jig guides for the arms, and assembly guides to help speed up production.</li>
-        </ul>
-        <p>Learn more about Ultra: <a href="https://ultra.tech" target="_blank">ultra.tech</a></p>
-        <div class="image-gallery">
-          <img src="./images/Ultra/MAX ROBOT 5.5.jpg" alt="With the Ultra robot" loading="lazy" decoding="async">
-          <img src="./images/Ultra/ultra photo collage.png" alt="Ultra Robotics internship photo collage" class="featured-image" loading="lazy" decoding="async">
-          <img src="./images/Ultra/team lunch.jpg" alt="team lunch" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </details>
-
-    <!-- System on Chip: RISC-V Processor -->
-    <details class="project">
-      <summary>
-        <img src="./images/SOC_project.jpg" alt="RISC-V pipeline diagram" loading="lazy" decoding="async">
-        <h3>System on Chip RISC-V Processor</h3>
-      </summary>
-      <div class="project-details">
-        <p>For my System on Chip course, I designed and implemented a pipelined RISC-V processor in SystemVerilog, optimized for both speed and area efficiency. The processor features a classic five-stage pipeline — Fetch, Decode, Execute, Memory, and Writeback — complete with a hazard unit, data forwarding logic, and branch prediction to keep the pipeline moving. The challenge was a competitive CoreMark benchmark: maximize performance while minimizing silicon area. Balancing those two objectives forced careful decisions at every level of the design, from implementing a 3 stage multiply unit to optimizing branch prediction along with deciding compiler flags and hazard logic. My team achieved the best performance processor in the class of 14 students </p>
-        <p>Check out the project on GitHub: <a href="https://github.com/SystemOnChipTeam/SOC_Final_Proj" target="_blank">SOC_Final_Proj</a></p>
-        <div class="image-gallery">
-          <img src="./images/SOC_project.jpg" alt="Pipelined RISC-V processor block diagram" loading="lazy" decoding="async">
-        </div>
-      </div>
-    </details>
-
-		<!-- FSAE -->
+        <!-- Ultra Robotics -->
         <details class="project">
           <summary>
-            <img src="./images/FSAEChassis.jpeg" alt="FSAE chassis" loading="lazy" decoding="async">
-            <h3>Harvey Mudd Racing FSAE Team</h3>
+            <img src="./images/thumbs/Ultra/MAX%20ROBOT%205.5.jpg" alt="With the Ultra robot" class="cover-shift-down" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Ultra Robotics</h3>
+              <p class="card-meta"><span class="card-date">Summer 2026</span> · Mechatronics Intern · Wiring, enclosures, test fixtures</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>As the elected Technical Lead, I oversee all technical aspects of the car — but what I love most is being in the thick of the build. From designing complex parts in SolidWorks and running simulations, to physically fabricating the chassis and TIG welding it together, I'm involved at every step. This project has been an incredible way to learn: there's nothing quite like the challenge of making sure every system talks to the next when you're the one building them. It's been a privilege to help bring Mudd's first ever FSAE car to life.
-              Below are some images of the chassis fabrication in progress. 
-              Check out our website <a href="https://harveymuddracing.com" target="_blank">harveymuddracing.com</a> to learn more about the team and our progress. </p>
+            <p>I had an amazing time interning at Ultra Robotics. I spent the first half of the summer on the manufacturing team, learning how every part of their robots is assembled — soldering connectors and wiring, building PCBs, assembling arms — before moving into my own design projects and putting my own parts into production. It was exactly what I was hoping for: jumping into a fast-paced engineering environment and doing hands-on product development. By day two, I was already making cables we needed to ship robots out the door.</p>
+            <p>Beyond the hands-on work, it was rewarding to see how a high-performing team operates efficiently — CAD collaboration, task management software, work and assembly documentation, design reviews, clear communication, and fast-paced planning with realistic two-week sprints.</p>
+            <p>A few things I got to work on:</p>
+            <ul>
+              <li><strong>Torso wiring loom redesign</strong> — my first project. I designed a custom wiring loom that made assembly easier and added strain relief to the torso wires, cutting assembly time, improving robot reliability, and making field repairs easier.</li>
+              <li><strong>Base structure redesign</strong> — took the robot's base from exposed, messy wiring to a protected, easy-to-assemble enclosure with clean panels and a glowing Ultra logo. Half a dozen design reviews later, I landed on a system I'm really proud of. (Unreleased for now, so no pictures yet — stay tuned!)</li>
+              <li><strong>Manufacturing tools</strong> — designed a cable quality checker that detects shorts and miswires in cables and robot arms, cutting troubleshooting time and helping us catch bad cables before assembly. This saved us hours of debugging for each robot with an issue. Also built a custom ammeter logger, homing jig guides for the arms, and assembly guides to help speed up production.</li>
+            </ul>
+            <p>Learn more about Ultra: <a href="https://ultra.tech" target="_blank" rel="noopener">ultra.tech</a></p>
             <div class="image-gallery">
-			        <img src="./images/FSAEChassis.jpeg" alt="FSAE Chassis fabrication in progress" loading="lazy" decoding="async">
-              <img src="./images/FSAEChassisMaking.jpeg" alt="FSAE Chassis fabrication in progress" loading="lazy" decoding="async">
-              <img src="./images/ChassisRender.jpeg" alt="Chassis Render" loading="lazy" decoding="async">
-              <img src="./images/BendingMainHoopFSAE.jpeg" alt="Bending the Main Hoop" loading="lazy" decoding="async">
-			  <img src="./images/ChassisProgress.jpeg" alt="FSAE Apr 5" loading="lazy" decoding="async">
-			  <img src="./images/Car_Selfie.jpeg" alt="Selfie with the chassis" loading="lazy" decoding="async">
-			</div>
+              <img src="./images/thumbs/Ultra/MAX%20ROBOT%205.5.jpg" data-full="./images/Ultra/MAX%20ROBOT%205.5.jpg" alt="With the Ultra robot" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Ultra/ultra%20photo%20collage.jpg" data-full="./images/Ultra/ultra%20photo%20collage.jpg" alt="Ultra Robotics internship photo collage" class="featured-image" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Ultra/team%20lunch.jpg" data-full="./images/Ultra/team%20lunch.jpg" alt="Ultra team lunch" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
+
+        <!-- System on Chip: RISC-V Processor -->
+        <details class="project">
+          <summary>
+            <img src="./images/thumbs/SOC_project.jpg" alt="RISC-V pipeline diagram" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>System on Chip RISC-V Processor</h3>
+              <p class="card-meta"><span class="card-date">Spring 2026</span> · SystemVerilog · Top CoreMark performance in class</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>For my System on Chip course, I designed and implemented a pipelined RISC-V processor in SystemVerilog, optimized for both speed and area efficiency. The processor features a classic five-stage pipeline — Fetch, Decode, Execute, Memory, and Writeback — complete with a hazard unit, data forwarding logic, and branch prediction to keep the pipeline moving. The challenge was a competitive CoreMark benchmark: maximize performance while minimizing silicon area. Balancing those two objectives forced careful decisions at every level of the design, from implementing a three-stage multiply unit to optimizing branch prediction, choosing compiler flags, and tuning hazard logic. My team achieved the best-performing processor in the class of 14 students.</p>
+            <p>Check out the project on GitHub: <a href="https://github.com/SystemOnChipTeam/SOC_Final_Proj" target="_blank" rel="noopener">SOC_Final_Proj</a></p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/SOC_project.jpg" data-full="./images/SOC_project.jpg" alt="Pipelined RISC-V processor block diagram" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
+
+        <!-- FSAE -->
+        <details class="project">
+          <summary>
+            <img src="./images/thumbs/FSAEChassis.jpeg" alt="FSAE chassis" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Harvey Mudd Racing FSAE Team</h3>
+              <p class="card-meta"><span class="card-date">2025–present</span> · Technical Lead · SolidWorks, TIG welding · Mudd's first FSAE car</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>As the elected Technical Lead, I oversee all technical aspects of the car — but what I love most is being in the thick of the build. From designing complex parts in SolidWorks and running simulations, to physically fabricating the chassis and TIG welding it together, I'm involved at every step. This project has been an incredible way to learn: there's nothing quite like the challenge of making sure every system talks to the next when you're the one building them. It's been a privilege to help bring Mudd's first-ever FSAE car to life.</p>
+            <p>Below are some images of the chassis fabrication in progress. Check out our website <a href="https://harveymuddracing.com" target="_blank" rel="noopener">harveymuddracing.com</a> to learn more about the team and our progress.</p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/FSAEChassis.jpeg" data-full="./images/FSAEChassis.jpeg" alt="FSAE chassis fabrication in progress" loading="lazy" decoding="async">
+              <img src="./images/thumbs/FSAEChassisMaking.jpeg" data-full="./images/FSAEChassisMaking.jpeg" alt="Fabricating the FSAE chassis" loading="lazy" decoding="async">
+              <img src="./images/thumbs/ChassisRender.jpeg" data-full="./images/ChassisRender.jpeg" alt="Chassis CAD render" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BendingMainHoopFSAE.jpeg" data-full="./images/BendingMainHoopFSAE.jpeg" alt="Bending the main hoop" loading="lazy" decoding="async">
+              <img src="./images/thumbs/ChassisProgress.jpeg" data-full="./images/ChassisProgress.jpeg" alt="Chassis progress in April" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Car_Selfie.jpeg" data-full="./images/Car_Selfie.jpeg" alt="Selfie with the chassis" loading="lazy" decoding="async">
+            </div>
           </div>
         </details>
 
         <!-- Speaker -->
         <details class="project">
           <summary>
-            <img src="./images/Speaker/Speaker_image.jpeg" alt="Clear acrylic speaker" loading="lazy" decoding="async">
-            <h3>Speaker</h3>
+            <img src="./images/thumbs/Speaker/Speaker_image.jpeg" alt="Clear acrylic speaker" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Speaker</h3>
+              <p class="card-meta"><span class="card-date">Summer 2026</span> · Laser-cut acrylic · Printed nylon brackets · Tuned EQ</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>This is a speaker I designed and built as a fun project. I love the way the clear acrylic lets you see through to the electronics and wiring. I used FormLabs Nylon-12 to print the corner brackets the hold together the aluminum extrusion. I used a laser cutter to cut the clear panels out of acrylic. It sounds fantastic since I was able to tune the EQ balance of each speaker.</p>
+            <p>This is a speaker I designed and built as a fun project. I love the way the clear acrylic lets you see through to the electronics and wiring. I used Formlabs Nylon 12 to print the corner brackets that hold together the aluminum extrusion, and a laser cutter to cut the clear panels out of acrylic. It sounds fantastic since I was able to tune the EQ balance of each speaker.</p>
             <div class="image-gallery">
-              <img src="./images/Speaker/Speaker_image.jpeg" alt="Clear acrylic speaker with exposed drivers and electronics" loading="lazy" decoding="async">
-              <img src="./images/Speaker/speaker_cad.png" alt="CAD model of the speaker enclosure" loading="lazy" decoding="async">
-              <img src="./images/Speaker/speaker_cad_front.png" alt="Front view CAD model of the speaker" loading="lazy" decoding="async">
-              <img src="./images/Speaker/speaker_selfie.jpeg" alt="Max with the finished speaker" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Speaker/Speaker_image.jpeg" data-full="./images/Speaker/Speaker_image.jpeg" alt="Clear acrylic speaker with exposed drivers and electronics" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Speaker/speaker_cad.png" data-full="./images/Speaker/speaker_cad.png" alt="CAD model of the speaker enclosure" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Speaker/speaker_cad_front.png" data-full="./images/Speaker/speaker_cad_front.png" alt="Front view CAD model of the speaker" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Speaker/speaker_selfie.jpeg" data-full="./images/Speaker/speaker_selfie.jpeg" alt="Max with the finished speaker" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
@@ -123,230 +140,249 @@
         <!-- Custom Chopsticks -->
         <details class="project">
           <summary>
-            <img src="./images/Chopsticks/IMG_2182.jpeg" alt="Handmade lignum vitae chopsticks" loading="lazy" decoding="async">
-            <h3>Custom Chopsticks</h3>
+            <img src="./images/thumbs/Chopsticks/IMG_2182.jpeg" alt="Handmade lignum vitae chopsticks" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Custom Chopsticks</h3>
+              <p class="card-meta"><span class="card-date">August 2026</span> · Lignum vitae · Custom shaping jig</p>
+            </div>
           </summary>
           <div class="project-details">
             <p>Every time I had instant ramen in my dorm without chopsticks on hand, I'd tell myself, "You should really make some chopsticks." But finding free time during the school year was tough. This summer, I finally had the chance.</p>
-            <p>Building the jig itself was fairly straightforward, but tuning it to get my preferred chopstick dimensions took some trial and error. I started with walnut, but the wood turned out too soft for the narrow, rigid chopsticks I wanted — they bent more than I liked. So I switched to lignum vitae, one of the densest commercial woods available. It was a challenging wood to work with since it's so dense but it gave me exactly what I was after: skinny, rigid chopsticks that hold their shape.</p>
-            <p>I ended up making a few sets for family and friends, too. Now I can finally eat my late-night ramen in peace — with my handmade lignum vitae chopsticks in hand. 
-            <p></p>Made in August 2026</p>
+            <p>Building the jig itself was fairly straightforward, but tuning it to get my preferred chopstick dimensions took some trial and error. I started with walnut, but the wood turned out too soft for the narrow, rigid chopsticks I wanted — they bent more than I liked. So I switched to lignum vitae, one of the densest commercial woods available. It was a challenging wood to work with since it's so dense, but it gave me exactly what I was after: skinny, rigid chopsticks that hold their shape.</p>
+            <p>I ended up making a few sets for family and friends, too. Now I can finally eat my late-night ramen in peace — with my handmade lignum vitae chopsticks in hand.</p>
             <div class="image-gallery">
-              <img src="./images/Chopsticks/IMG_2182.jpeg" alt="Finished sets of handmade chopsticks on the workbench" loading="lazy" decoding="async">
-              <img src="./images/Chopsticks/IMG_2178.jpeg" alt="Chopstick sets in lignum vitae, walnut, and lighter woods" loading="lazy" decoding="async">
-              <img src="./images/Chopsticks/IMG_2166.jpeg" alt="Planing a chopstick blank in a custom wooden jig" loading="lazy" decoding="async">
-              <img src="./images/Chopsticks/IMG_2173.jpeg" alt="Sanding a lignum vitae chopstick next to the shaping jig" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Chopsticks/IMG_2182.jpeg" data-full="./images/Chopsticks/IMG_2182.jpeg" alt="Finished sets of handmade chopsticks on the workbench" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Chopsticks/IMG_2178.jpeg" data-full="./images/Chopsticks/IMG_2178.jpeg" alt="Chopstick sets in lignum vitae, walnut, and lighter woods" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Chopsticks/IMG_2166.jpeg" data-full="./images/Chopsticks/IMG_2166.jpeg" alt="Planing a chopstick blank in a custom wooden jig" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Chopsticks/IMG_2173.jpeg" data-full="./images/Chopsticks/IMG_2173.jpeg" alt="Sanding a lignum vitae chopstick next to the shaping jig" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
 
-        <!-- Exploravist -->
+        <!-- ExploraVist -->
         <details class="project">
           <summary>
-            <img src="./images/ExploraVist Device Image.png" alt="Exploravist" loading="lazy" decoding="async">
-            <h3>Exploravist</h3>
+            <img src="./images/thumbs/ExploraVist%20Device%20Image.png" alt="ExploraVist headset" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>ExploraVist</h3>
+              <p class="card-meta"><span class="card-date">Summer 2025</span> · Embedded Software · C / ESP-IDF on ESP32</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p> Last summer I worked here full-time as an Embedded Software Engineer, writing C code in ESP-IDF to run on the ESP32 inside the ExploraVist headset. The core feature I worked on lets users press a button and hear a description of what they're looking at — a small interaction with a lot of engineering underneath it. 
-				I designed the state machine that controls the device's behavior as well as designing the low latency response over cloud. I contributed to both speech to text and text to speech development on the device. The website to ExploraVist is linked down below.</p>
-            <p><a href="https://exploravist.net" target="_blank">exploravist.net</a></p>
-            <p>A video of the ExploraVist product demo</p>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/8kXNqO2Fwbs" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-			<div class="image-gallery">
-              <img src="./images/exploravist_device.jpeg" alt="Device" loading="lazy" decoding="async">
+            <p>I worked full-time as an Embedded Software Engineer, writing C code in ESP-IDF to run on the ESP32 inside the ExploraVist headset. The core feature I worked on lets users press a button and hear a description of what they're looking at — a small interaction with a lot of engineering underneath it.</p>
+            <p>I designed the state machine that controls the device's behavior, as well as the low-latency cloud response pipeline. I contributed to both speech-to-text and text-to-speech development on the device.</p>
+            <p>Learn more: <a href="https://exploravist.net" target="_blank" rel="noopener">exploravist.net</a></p>
+            <p>A video of the ExploraVist product demo:</p>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/8kXNqO2Fwbs" title="ExploraVist product demo" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <div class="image-gallery">
+              <img src="./images/thumbs/exploravist_device.jpeg" data-full="./images/exploravist_device.jpeg" alt="ExploraVist device" loading="lazy" decoding="async">
+            </div>
           </div>
         </details>
 
         <!-- FIRST Robotics 8013 -->
         <details class="project">
           <summary>
-            <img src="./images/OffseasonSwerve.jpeg" alt="FIRST Robotics" loading="lazy" decoding="async">
-            <h3>FIRST Robotics 8013</h3>
+            <img src="./images/thumbs/OffseasonSwerve.jpeg" alt="FIRST Robotics offseason swerve robot" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>FIRST Robotics 8013</h3>
+              <p class="card-meta"><span class="card-date">2020–2024</span> · Founding member · Autonomous code · New England Champions</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>In high school, I was fascinated by FIRST robotics. During the build season I would spend 30+ hour weeks
-              working on the robot. I was one of the founding members of our team along with two of my friends. We went
-              from knowing nothing at all and being complete beginners in 2020, to 4 years later winning the New England
-              Championships. It's amazing how much I learned from this program and how far hard work can get you. Below
-              I've included pictures from the robots we built from each year and a few pictures of an offseason swerve
-              robot I spent one summer working on. You can see how our robots evolve over time. I currently serve as a mentor and enjoy helping the next generation of students learn and grow through robotics.</p>
+            <p>In high school, I was fascinated by FIRST Robotics. During the build season I would spend 30+ hour weeks working on the robot. I was one of the founding members of our team along with two of my friends. We went from knowing nothing at all and being complete beginners in 2020, to winning the New England Championships four years later. It's amazing how much I learned from this program and how far hard work can get you.</p>
+            <p>Below are pictures of the robots we built each year — you can see how they evolved over time — plus a few pictures of an offseason swerve robot I spent one summer working on. I currently serve as a mentor and enjoy helping the next generation of students learn and grow through robotics.</p>
             <div class="image-gallery">
-              <img src="./images/2020-robot.jpeg" alt="2020 robot" loading="lazy" decoding="async">
-              <img src="./images/8013-2022.jpeg" alt="2022 Robot" loading="lazy" decoding="async">
-              <img src="./images/8013-2023.jpeg" alt="2023 Worlds" loading="lazy" decoding="async">
-              <img src="./images/8013-2024.jpeg" alt="2024 Worlds" loading="lazy" decoding="async">
-              <img src="./images/8013-2024-1.jpeg" alt="Close-up" loading="lazy" decoding="async">
-              <img src="./images/2024-robot.jpeg" alt="2024 Team" loading="lazy" decoding="async">
-              <img src="./images/OffseasonSwerve.jpeg" alt="Swerve" loading="lazy" decoding="async">
-              <img src="./images/swerveBuilding.jpeg" alt="Building the offseason swerve" loading="lazy" decoding="async">
-              <img src="./images/IMG_3502.jpeg" alt="Team 8013 with the robot in the pits" loading="lazy" decoding="async">
+              <img src="./images/thumbs/2020-robot.jpeg" data-full="./images/2020-robot.jpeg" alt="2020 robot" loading="lazy" decoding="async">
+              <img src="./images/thumbs/8013-2022.jpeg" data-full="./images/8013-2022.jpeg" alt="2022 robot" loading="lazy" decoding="async">
+              <img src="./images/thumbs/8013-2023.jpeg" data-full="./images/8013-2023.jpeg" alt="2023 Worlds" loading="lazy" decoding="async">
+              <img src="./images/thumbs/8013-2024.jpeg" data-full="./images/8013-2024.jpeg" alt="2024 Worlds" loading="lazy" decoding="async">
+              <img src="./images/thumbs/8013-2024-1.jpeg" data-full="./images/8013-2024-1.jpeg" alt="2024 robot close-up" loading="lazy" decoding="async">
+              <img src="./images/thumbs/2024-robot.jpeg" data-full="./images/2024-robot.jpeg" alt="2024 team" loading="lazy" decoding="async">
+              <img src="./images/thumbs/OffseasonSwerve.jpeg" data-full="./images/OffseasonSwerve.jpeg" alt="Offseason swerve robot" loading="lazy" decoding="async">
+              <img src="./images/thumbs/swerveBuilding.jpeg" data-full="./images/swerveBuilding.jpeg" alt="Building the offseason swerve" loading="lazy" decoding="async">
+              <img src="./images/thumbs/IMG_3502.jpeg" data-full="./images/IMG_3502.jpeg" alt="Team 8013 with the robot in the pits" loading="lazy" decoding="async">
             </div>
-            <p>A video of the 4 note autonomous routine I developed:</p>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/BVM4go27avY" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-            <p>A video of our engame sequence called shooting the trap which we could do very quickly</p>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/uGZaPyb9Ug0" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <p>A video of the four-note autonomous routine I developed:</p>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/BVM4go27avY" title="Four-note autonomous routine" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+            <p>A video of our endgame sequence, shooting the trap, which we could do very quickly:</p>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/uGZaPyb9Ug0" title="Shooting the trap endgame" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
           </div>
         </details>
 
-  <!-- Backwards Bike -->
+        <!-- Backwards Bike -->
         <details class="project">
           <summary>
-            <img src="./images/BackwardsBikeGear.jpeg" alt="Drift Trike" loading="lazy" decoding="async">
-            <h3>Backwards Bike</h3>
+            <img src="./images/thumbs/BackwardsBikeGear.jpeg" alt="Backwards bike reversing gear" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Backwards Bike</h3>
+              <p class="card-meta"><span class="card-date">Fall 2025</span> · Makerspace grant · Welded reversing-gear headset</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>For a Makerspace grant project, I built a bike that steers backwards — turn right to steer left, turn left to steer right. I cut apart a bike headstock and welded it onto another with a gear in the middle to reverse the steering. I call it the "anti-theft bike," and it lives up to the name: I once watched someone try to steal it and give up in about five seconds. The best part is letting people attempt to ride it and watching the moment they realize it's nothing like it looks. I ride it around campus. Below are some pictures of the bike.
-            </p>
+            <p>For a Makerspace grant project, I built a bike that steers backwards — turn right to steer left, turn left to steer right. I cut apart a bike headstock and welded it onto another with a gear in the middle to reverse the steering. I call it the "anti-theft bike," and it lives up to the name: I once watched someone try to steal it and give up in about five seconds. The best part is letting people attempt to ride it and watching the moment they realize it's nothing like it looks. I ride it around campus.</p>
             <div class="image-gallery">
-              <img src="./images/BackwardsBikeGear.jpeg" alt="Backwards Bike" loading="lazy" decoding="async">
-              <img src="./images/BackwardsBikeFull.jpeg" alt="Backwards Bike" loading="lazy" decoding="async">
-			  <img src="./images/BackwardsBikeSelfie.jpeg" alt="Selfie with the Backwards Bike" loading="lazy" decoding="async">
-              <img src="./images/BackwardsBike.jpeg" alt="Backwards Bike" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BackwardsBikeGear.jpeg" data-full="./images/BackwardsBikeGear.jpeg" alt="Reversing gear on the backwards bike" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BackwardsBikeFull.jpeg" data-full="./images/BackwardsBikeFull.jpeg" alt="Full view of the backwards bike" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BackwardsBikeSelfie.jpeg" data-full="./images/BackwardsBikeSelfie.jpeg" alt="Selfie with the backwards bike" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BackwardsBike.jpeg" data-full="./images/BackwardsBike.jpeg" alt="Backwards bike" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
-        
+
         <!-- Motorized Drift Trike -->
         <details class="project">
           <summary>
-            <img src="./images/DriftTrike.jpeg" alt="Drift Trike" loading="lazy" decoding="async">
-            <h3>Motorized Drift Trike</h3>
+            <img src="./images/thumbs/DriftTrike.jpeg" alt="Motorized drift trike" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Motorized Drift Trike</h3>
+              <p class="card-meta"><span class="card-date">Summer 2020</span> · Built at 15 · MIG-welded frame · 40+ mph</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>Inspired by Colin Furze, I built a gas-powered drift trike at 15 — MIG welded steel frame, dirt bike engine, and cut PVC pipe for wheels. It could hit over 40 mph, which made for a few thrilling rides before my parents decided it was too dangerous to keep riding. It now hangs on the wall in our shop like a trophy. Building it was my introduction to metalworking, and since then I've gone on to run lathes, chop saws, table saws, and all manner of hand tools through countless woodworking and metalworking projects.</p>
+            <p>Inspired by Colin Furze, I built a gas-powered drift trike at 15 — MIG-welded steel frame, dirt bike engine, and cut PVC pipe for wheels. It could hit over 40 mph, which made for a few thrilling rides before my parents decided it was too dangerous to keep riding. It now hangs on the wall in our shop like a trophy. Building it was my introduction to metalworking, and since then I've gone on to run lathes, chop saws, table saws, and all manner of hand tools through countless woodworking and metalworking projects.</p>
             <div class="image-gallery">
-              <img src="./images/DriftTrike.jpeg" alt="Drift Trike" loading="lazy" decoding="async">
-              <img src="./images/DriftTrike1.jpeg" alt="Side view" loading="lazy" decoding="async">
-              <img src="./images/Welding.jpeg" alt="Welding frame" loading="lazy" decoding="async">
-              <img src="./images/IMG_6559.jpeg" alt="Drift trike on the workbench" loading="lazy" decoding="async">
+              <img src="./images/thumbs/DriftTrike.jpeg" data-full="./images/DriftTrike.jpeg" alt="Drift trike" loading="lazy" decoding="async">
+              <img src="./images/thumbs/DriftTrike1.jpeg" data-full="./images/DriftTrike1.jpeg" alt="Drift trike side view" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Welding.jpeg" data-full="./images/Welding.jpeg" alt="Welding the frame" loading="lazy" decoding="async">
+              <img src="./images/thumbs/IMG_6559.jpeg" data-full="./images/IMG_6559.jpeg" alt="Drift trike on the workbench" loading="lazy" decoding="async">
             </div>
-            </iframe>
-            <p>This is a video of me drifting around on the drift trike I made</p>
-            <iframe width="300" height="200" src="https://www.youtube.com/embed/n6mSSA4nvBw" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <p>A video of me drifting around on the drift trike:</p>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/n6mSSA4nvBw" title="Drift trike ride" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
           </div>
         </details>
 
         <!-- Logic Demo Board -->
         <details class="project">
           <summary>
-            <img src="./images/Board_front.jpeg" alt="Logic Board" loading="lazy" decoding="async">
-            <h3>Logic Gate Demo Board</h3>
+            <img src="./images/thumbs/Board_front.jpeg" alt="Logic gate demo board" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Logic Gate Demo Board</h3>
+              <p class="card-meta"><span class="card-date">Spring 2025</span> · Team project · Used to teach Digital Electronics at Mudd</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>In my Intro to Engineering Design and Manufacturing class, my team designed and built a logic gate demo board for our final project. This board is used to assist in teaching the Digital Electronics & Computer Architecture class at Harvey Mudd. We learned how to use integrated circuits and make a timer circuit when making this board. I really enjoyed doing the wiring for the electrical part of the board.</p>
+            <p>In my Intro to Engineering Design and Manufacturing class, my team designed and built a logic gate demo board for our final project. The board is used to help teach the Digital Electronics &amp; Computer Architecture class at Harvey Mudd. We learned how to use integrated circuits and build a timer circuit while making it. I really enjoyed doing the wiring for the electrical part of the board.</p>
             <div class="image-gallery">
-              <img src="./images/Board_front.jpeg" alt="Front" loading="lazy" decoding="async">
-              <img src="./images/BoardBack.jpeg" alt="Back" loading="lazy" decoding="async">
-              <img src="./images/BreadBoard.jpeg" alt="Breadboard" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Board_front.jpeg" data-full="./images/Board_front.jpeg" alt="Front of the demo board" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BoardBack.jpeg" data-full="./images/BoardBack.jpeg" alt="Wiring on the back of the demo board" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BreadBoard.jpeg" data-full="./images/BreadBoard.jpeg" alt="Breadboard prototype" loading="lazy" decoding="async">
             </div>
-            </iframe>
-            <p>Here is a video of me demonstrating the board</p>
-            <iframe width="200" height="360" src="https://www.youtube.com/embed/FH4loua5bqE" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-                </details>
-
-        <!-- Guitar Making -->
-        <details class="project">
-          <summary>
-            <img src="./images/stick_guitar.jpeg" alt="Stick Guitar" loading="lazy" decoding="async">
-            <h3>Guitar Making</h3>
-          </summary>
-          <div class="project-details">
-            <p>I came up with the idea to build a guitar using resin and a bunch of sticks. I call it the Stick Guitar.
-              It's a functional telecaster style guitar with the body made out of chopepd up sticks. It looks very cool
-              and even plays well. I cut the body and neck on a ShopBot 3-axis CNC milling machine.</p>
-            <div class="image-gallery">
-              <img src="./images/stick_guitar_body.jpeg" alt="Body blank" loading="lazy" decoding="async">
-              <img src="./images/stick_guitar_layout.jpg" alt="Layout" loading="lazy" decoding="async">
-              <img src="./images/stick_guitar.jpeg" alt="Finished" loading="lazy" decoding="async">
-            </div>
-            <p>I designed this bass guitar in Fusion 360 and then cut it on a ShopBot CNC milling machine with help from
-              my dad. The other components on the bass are from StewMac. I played this bass in my high school's jazz ensemble for 2
-              years, and it worked great! My sister pained a bass fish on the front so I named it the Bass Bass guitar</p>
-            <div class="image-gallery">
-              <img src="./images/fretboard-Bass.jpeg" alt="Bass Guitar" class="crop-cover" loading="lazy" decoding="async">
-              <img src="./images/BassGuitar.jpeg" alt="Bass Guitar" class="crop-cover" loading="lazy" decoding="async">
-              <img src="./images/IMG_9051.jpeg" alt="Cutting parts on the ShopBot CNC" loading="lazy" decoding="async">
+            <p>A video of me demonstrating the board:</p>
+            <div class="video vertical">
+              <iframe src="https://www.youtube.com/embed/FH4loua5bqE" title="Logic gate demo board demonstration" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
             </div>
           </div>
         </details>
 
+        <!-- Guitar Making -->
+        <details class="project">
+          <summary>
+            <img src="./images/thumbs/stick_guitar.jpeg" alt="Stick Guitar" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Guitar Making</h3>
+              <p class="card-meta"><span class="card-date">Summer 2020</span> · CNC-cut bodies · Stick Guitar &amp; Bass Bass</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>I came up with the idea to build a guitar using resin and a bunch of sticks. I call it the Stick Guitar. It's a functional Telecaster-style guitar with the body made out of chopped-up sticks. It looks very cool and even plays well. I cut the body and neck on a ShopBot 3-axis CNC milling machine.</p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/stick_guitar_body.jpeg" data-full="./images/stick_guitar_body.jpeg" alt="Stick Guitar body blank" loading="lazy" decoding="async">
+              <img src="./images/thumbs/stick_guitar_layout.jpg" data-full="./images/stick_guitar_layout.jpg" alt="Stick Guitar layout" loading="lazy" decoding="async">
+              <img src="./images/thumbs/stick_guitar.jpeg" data-full="./images/stick_guitar.jpeg" alt="Finished Stick Guitar" loading="lazy" decoding="async">
+            </div>
+            <p>I designed this bass guitar in Fusion 360 and then cut it on a ShopBot CNC milling machine with help from my dad. The other components on the bass are from StewMac. I played this bass in my high school's jazz ensemble for two years, and it worked great! My sister painted a bass fish on the front, so I named it the Bass Bass guitar.</p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/fretboard-Bass.jpeg" data-full="./images/fretboard-Bass.jpeg" alt="Bass guitar fretboard" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BassGuitar.jpeg" data-full="./images/BassGuitar.jpeg" alt="Bass Bass guitar with painted fish" loading="lazy" decoding="async">
+              <img src="./images/thumbs/IMG_9051.jpeg" data-full="./images/IMG_9051.jpeg" alt="Cutting parts on the ShopBot CNC" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
 
         <!-- FPV Drone Hobby -->
         <details class="project">
           <summary>
-            <img src="./images/drone1.jpeg" alt="FPV Drone" loading="lazy" decoding="async">
-            <h3>FPV Drone Hobby</h3>
+            <img src="./images/thumbs/drone1.jpeg" alt="FPV drone" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>FPV Drone Hobby</h3>
+              <p class="card-meta"><span class="card-date">2020–2024</span> · Building, tuning, and flying racing &amp; cinematic drones</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>One of my hobbies is building FPV drones for racing and cinematic purposes. I learned how to build them through YouTube
-              videos and reading online documentation. Through building numerous drones, I've learned how they work and how to tune flight controllers and
-              set each drone up. It was also a challenge to learn how to fly them. I have some videos of myself flying them around on my YouTube channel</p>
+            <p>One of my hobbies is building FPV drones for racing and cinematic purposes. I learned how to build them through YouTube videos and reading online documentation. Through building numerous drones, I've learned how they work and how to tune flight controllers and set each drone up. It was also a challenge to learn how to fly them. I have some videos of myself flying them on my YouTube channel.</p>
             <div class="image-gallery">
-              <img src="./images/drone1.jpeg" alt="Racing drone" loading="lazy" decoding="async">
-              <img src="./images/drone2.jpeg" alt="Cinematic drone" loading="lazy" decoding="async">
-              <img src="./images/droneElectro.jpeg" alt="drone" loading="lazy" decoding="async">
+              <img src="./images/thumbs/drone1.jpeg" data-full="./images/drone1.jpeg" alt="Racing drone" loading="lazy" decoding="async">
+              <img src="./images/thumbs/drone2.jpeg" data-full="./images/drone2.jpeg" alt="Cinematic drone" loading="lazy" decoding="async">
+              <img src="./images/thumbs/droneElectro.jpeg" data-full="./images/droneElectro.jpeg" alt="Drone electronics" loading="lazy" decoding="async">
             </div>
-            <iframe width="350" height="200" src="https://www.youtube.com/embed/foASejTd0Ak?si=zeV-N9pOuIojh2Qt"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+            <div class="video">
+              <iframe src="https://www.youtube.com/embed/foASejTd0Ak" title="FPV drone flight" loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
           </div>
         </details>
 
         <!-- Bike Scooter -->
         <details class="project">
           <summary>
-            <img src="./images/BikeScooter.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
-            <h3>Bike Scooter</h3>
+            <img src="./images/thumbs/BikeScooter.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Bike Scooter</h3>
+              <p class="card-meta"><span class="card-date">Summer 2021</span> · Cut-and-welded bicycle · Two iterations</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>This is a project I call a Bike Scooter. It's made by cutting apart an old bicycle and welding a custom
-              scooter deck on. I designed and fabricated it. I went through two iterations as shown in these photos.</p>
+            <p>This is a project I call a Bike Scooter. It's made by cutting apart an old bicycle and welding on a custom scooter deck. I designed and fabricated it, and went through two iterations, as shown in these photos.</p>
             <div class="image-gallery">
-              <img src="./images/bikescootv0.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
-              <img src="./images/BikeScooter.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
-              <img src="./images/bikeScoot.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
-              <img src="./images/WeldingBikeScooter.jpeg" alt="Welding the bike scooter" loading="lazy" decoding="async">
+              <img src="./images/thumbs/bikescootv0.jpeg" data-full="./images/bikescootv0.jpeg" alt="First Bike Scooter iteration" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BikeScooter.jpeg" data-full="./images/BikeScooter.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
+              <img src="./images/thumbs/bikeScoot.jpeg" data-full="./images/bikeScoot.jpeg" alt="Second Bike Scooter iteration" loading="lazy" decoding="async">
+              <img src="./images/thumbs/WeldingBikeScooter.jpeg" data-full="./images/WeldingBikeScooter.jpeg" alt="Welding the Bike Scooter" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
 
-        <!--Kart conversion-->
+        <!-- Kart conversion -->
         <details class="project">
           <summary>
-            <img src="./images/kart.jpeg" alt="Go Kart Conversion" loading="lazy" decoding="async">
-            <h3>Go Kart Conversion</h3>
+            <img src="./images/thumbs/kart.jpeg" alt="Go kart conversion" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Go Kart Conversion</h3>
+              <p class="card-meta"><span class="card-date">Spring 2024</span> · Gas-to-electric conversion · High school senior project</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>During my High School senior spring I converted a motorized go kart into an electric kart with a group of
-              friends. This was a fun project because at the end of it we got to drive it around the Boston alley. We were also featured in our school's newspaper as our project was quite unique</p>
+            <p>During my high school senior spring, I converted a gas go kart into an electric kart with a group of friends. This was a fun project because at the end of it we got to drive it around a Boston alley. We were also featured in our school's newspaper, since our project was quite unique.</p>
             <div class="image-gallery">
-              <img src="./images/rear.jpeg" alt="Rear" loading="lazy" decoding="async">
-              <img src="./images/battery-kart.jpeg" alt="Kart battery" loading="lazy" decoding="async">
-              <img src="./images/side-kart.jpeg" alt="Side" loading="lazy" decoding="async">
-              <img src="./images/team-kart.jpeg" alt="Team" loading="lazy" decoding="async">
-              <img src="./images/FrontGoKart1.jpeg" alt="Front of Go kart" loading="lazy" decoding="async">
-              <img src="./images/BatteryHolderKart.jpeg" alt="Battery Mount" loading="lazy" decoding="async">
-              <img src="./images/ESCMount1.jpeg" alt="Speed Controller Mount" loading="lazy" decoding="async">
-              <img src="./images/MotorMountKart.jpeg" alt="Motor Mount" loading="lazy" decoding="async">
-              <img src="./images/WeldingGoKart1.jpeg" alt="Welding action" loading="lazy" decoding="async">
+              <img src="./images/thumbs/rear.jpeg" data-full="./images/rear.jpeg" alt="Rear of the kart" loading="lazy" decoding="async">
+              <img src="./images/thumbs/battery-kart.jpeg" data-full="./images/battery-kart.jpeg" alt="Kart battery" loading="lazy" decoding="async">
+              <img src="./images/thumbs/side-kart.jpeg" data-full="./images/side-kart.jpeg" alt="Side of the kart" loading="lazy" decoding="async">
+              <img src="./images/thumbs/team-kart.jpeg" data-full="./images/team-kart.jpeg" alt="Team with the kart" loading="lazy" decoding="async">
+              <img src="./images/thumbs/FrontGoKart1.jpeg" data-full="./images/FrontGoKart1.jpeg" alt="Front of the go kart" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BatteryHolderKart.jpeg" data-full="./images/BatteryHolderKart.jpeg" alt="Battery mount" loading="lazy" decoding="async">
+              <img src="./images/thumbs/ESCMount1.jpeg" data-full="./images/ESCMount1.jpeg" alt="Speed controller mount" loading="lazy" decoding="async">
+              <img src="./images/thumbs/MotorMountKart.jpeg" data-full="./images/MotorMountKart.jpeg" alt="Motor mount" loading="lazy" decoding="async">
+              <img src="./images/thumbs/WeldingGoKart1.jpeg" data-full="./images/WeldingGoKart1.jpeg" alt="Welding the kart" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
@@ -354,15 +390,18 @@
         <!-- Puzzle Club Table -->
         <details class="project">
           <summary>
-            <img src="./images/PuzzleClubTable.jpeg" alt="Puzzle Club Table" loading="lazy" decoding="async">
-            <h3>Puzzle Club Table</h3>
+            <img src="./images/thumbs/PuzzleClubTable.jpeg" alt="Puzzle Club table" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Puzzle Club Table</h3>
+              <p class="card-meta"><span class="card-date">Fall 2023</span> · Height-adjustable table</p>
+            </div>
           </summary>
           <div class="project-details">
-            <p>I made a height‑adjustable table for the Puzzle Club at my high school.</p>
+            <p>I made a height-adjustable table for the Puzzle Club at my high school.</p>
             <div class="image-gallery">
-              <img src="./images/PuzzleClubTable.jpeg" alt="Puzzle Club Table" loading="lazy" decoding="async">
-              <img src="./images/puzzleTable.jpeg" alt="Puzzle Club Table" loading="lazy" decoding="async">
-              <img src="./images/puzzleTableHigh.jpeg" alt="Puzzle Club Table raised" loading="lazy" decoding="async">
+              <img src="./images/thumbs/PuzzleClubTable.jpeg" data-full="./images/PuzzleClubTable.jpeg" alt="Puzzle Club table" loading="lazy" decoding="async">
+              <img src="./images/thumbs/puzzleTable.jpeg" data-full="./images/puzzleTable.jpeg" alt="Puzzle Club table lowered" loading="lazy" decoding="async">
+              <img src="./images/thumbs/puzzleTableHigh.jpeg" data-full="./images/puzzleTableHigh.jpeg" alt="Puzzle Club table raised" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
@@ -370,30 +409,28 @@
       </div>
     </section>
 
-
     <section id="contact" class="section">
       <h2>Contact Me</h2>
       <p>Email: mconine @(nospammers) hmc.edu</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/max-conine-1924a2298"
-          target="_blank">linkedin.com/in/max-conine-1924a2298</a></p>
-      <p>GitHub: <a href="https://github.com/maxconine" target="_blank">github.com/maxconine</a></p>
-      <p>YouTube: <a href="https://www.youtube.com/@maxconine7127" target="_blank">youtube.com/@maxconine7127</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/max-conine-1924a2298" target="_blank" rel="noopener">linkedin.com/in/max-conine-1924a2298</a></p>
+      <p>GitHub: <a href="https://github.com/maxconine" target="_blank" rel="noopener">github.com/maxconine</a></p>
+      <p>YouTube: <a href="https://www.youtube.com/@maxconine7127" target="_blank" rel="noopener">youtube.com/@maxconine7127</a></p>
     </section>
   </main>
 
-  <!-- LIGHTBOX: with navigation arrows -->
-  <div id="lightbox">
-    <span class="close">&times;</span>
-    <span class="arrow prev">&#10094;</span>
+  <!-- Lightbox with navigation arrows -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button type="button" class="close" aria-label="Close">&times;</button>
+    <button type="button" class="arrow prev" aria-label="Previous image">&#10094;</button>
     <div class="lightbox-content">
-      <img class="lightbox-image" alt="" loading="lazy" decoding="async" />
+      <img class="lightbox-image" alt="" decoding="async" />
       <div id="lightbox-caption"></div>
     </div>
-    <span class="arrow next">&#10095;</span>
+    <button type="button" class="arrow next" aria-label="Next image">&#10095;</button>
   </div>
 
   <footer>
-    <p>&copy; 2025 Max Conine</p>
+    <p>&copy; <span class="year">2026</span> Max Conine</p>
   </footer>
 
   <script type="module" src="./script.js"></script>
