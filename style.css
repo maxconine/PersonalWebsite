@@ -351,3 +351,12 @@ footer {
 
 .card-date { font-weight: 600; }
 
+
+/* app screenshots: show the whole image instead of cropping */
+.image-gallery.screenshots { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.image-gallery.screenshots img {
+  height: 110px;
+  object-fit: contain;
+  background: #232325;
+}
+.project summary img[src*="QCalc"] { background: #232325; object-fit: contain; object-position: center 12%; }
