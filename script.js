@@ -75,19 +75,68 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape')     closeLightbox();
 });
 
-// Only one project open at a time
+// Projects: one open at a time, and each has its own link (e.g. maxconine.com/#qcalc)
 const projects = document.querySelectorAll('details.project');
+const headerHeight = () => document.querySelector('header').offsetHeight;
+
+function scrollToProject(project, smooth) {
+  window.scrollTo({
+    top: project.getBoundingClientRect().top + window.scrollY - headerHeight() - 12,
+    behavior: smooth ? 'smooth' : 'instant',
+  });
+}
+
+function setHash(hash) {
+  const url = location.pathname + location.search + hash;
+  if (location.hash !== hash) history.replaceState(null, '', url);
+}
+
 projects.forEach(project => {
   project.addEventListener('toggle', () => {
-    if (!project.open) return;
-    projects.forEach(other => { if (other !== project) other.open = false; });
-    // closing a long card above can push this one off-screen; bring it back
-    const headerH = document.querySelector('header').offsetHeight;
-    if (project.getBoundingClientRect().top < headerH) {
-      window.scrollTo({ top: project.getBoundingClientRect().top + window.scrollY - headerH - 12 });
+    if (!project.open) {
+      if (location.hash === '#' + project.id) setHash('');
+      return;
     }
+    projects.forEach(other => { if (other !== project) other.open = false; });
+    setHash('#' + project.id);
+    // closing a long card above can push this one off-screen; bring it back
+    if (project.getBoundingClientRect().top < headerHeight()) scrollToProject(project, false);
   });
+
+  // "Copy link" button at the bottom of each project
+  const details = project.querySelector('.project-details');
+  if (details && project.id) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-link';
+    btn.textContent = 'Copy link to this project';
+    btn.addEventListener('click', async () => {
+      const link = location.origin + location.pathname + '#' + project.id;
+      try {
+        await navigator.clipboard.writeText(link);
+        btn.textContent = 'Link copied!';
+      } catch {
+        btn.textContent = link;
+      }
+      setTimeout(() => { btn.textContent = 'Copy link to this project'; }, 2000);
+    });
+    details.appendChild(btn);
+  }
 });
+
+// Open the project named in the URL (on load, or when a #project link is followed)
+function openFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const project = document.getElementById(id);
+  if (!project || !project.matches('details.project')) return;
+  project.open = true;
+  setTimeout(() => scrollToProject(project, false), 0);
+}
+openFromHash();
+// images above the card can still shift the page while loading; settle once they're in
+window.addEventListener('load', openFromHash);
+window.addEventListener('hashchange', openFromHash);
 
 // Keep the footer year current
 document.querySelectorAll('.year').forEach(el => { el.textContent = new Date().getFullYear(); });

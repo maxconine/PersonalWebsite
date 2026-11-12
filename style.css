@@ -360,3 +360,20 @@ footer {
   background: #232325;
 }
 .project summary img[src*="QCalc"] { background: #232325; object-fit: contain; object-position: center 12%; }
+
+/* "Copy link to this project" button */
+.copy-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  background: none;
+  border: 1px solid #ccc;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+.copy-link:hover { border-color: var(--accent); color: var(--accent); }
+.project { scroll-margin-top: 5rem; }

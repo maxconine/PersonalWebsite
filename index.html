@@ -50,7 +50,7 @@
       <div class="projects-grid">
 
         <!-- Ultra Robotics -->
-        <details class="project">
+        <details class="project" id="ultra">
           <summary>
             <img src="./images/thumbs/Ultra/MAX%20ROBOT%205.5.jpg" alt="With the Ultra robot" class="cover-shift-down" loading="lazy" decoding="async">
             <div class="card-label">
@@ -63,21 +63,23 @@
             <p>Beyond the hands-on work, it was rewarding to see how a high-performing team operates efficiently — CAD collaboration, task management software, work and assembly documentation, design reviews, clear communication, and fast-paced planning with realistic two-week sprints.</p>
             <p>A few things I got to work on:</p>
             <ul>
-              <li><strong>Torso wiring loom redesign</strong> — my first project. I designed a custom wiring loom that made assembly easier and added strain relief to the torso wires, cutting assembly time, improving robot reliability, and making field repairs easier.</li>
-              <li><strong>Base structure redesign</strong> — took the robot's base from exposed, messy wiring to a protected, easy-to-assemble enclosure with clean panels and a glowing Ultra logo. Half a dozen design reviews later, I landed on a system I'm really proud of. (Unreleased for now, so no pictures yet — stay tuned!)</li>
-              <li><strong>Manufacturing tools</strong> — designed a cable quality checker that detects shorts and miswires in cables and robot arms, cutting troubleshooting time and helping us catch bad cables before assembly. This saved us hours of debugging for each robot with an issue. Also built a custom ammeter logger, homing jig guides for the arms, and assembly guides to help speed up production.</li>
+              <li><strong>Torso wiring loom redesign</strong> — my first project. I designed a custom wiring loom that made assembly easier and added strain relief to the torso wires, cutting assembly time, improving robot reliability, and making field repairs easier. I tested many versions of the zip tie nubs and landed on the layout that was easiest to assemble and held the wires most securely. One lesson from testing: the nubs need a gap between the zip tie and the wire, so a technician can cut the zip tie without nicking the wire. I also tried compliant latches that snap the wires into the loom when they're pressed against it.</li>
+              <li><strong>OP1 base box redesign</strong> — took the base of Ultra's OP1 robot from exposed, messy wiring to a protected, easy-to-assemble enclosure with clean vented panels and a glowing Ultra logo. Half a dozen design reviews later, I landed on a design I'm really proud of, and it shipped. It's the first photo below.</li>
+              <li><strong>Cable checker</strong> — designed a tester that catches open, swapped, and shorted wires in 4-wire cables and robot arms before they go into a robot. This saved us hours of debugging for each robot with a bad cable. A Teensy drives one wire HIGH at a time (through a 1.5 kΩ resistor) while reading all four wires on the other end, each held LOW by a 10 kΩ pull-down. Energizing only one wire at a time is the key design choice: it checks continuity and isolation in one pass. If no sense pin goes HIGH, the wire is open. If the signal shows up on the wrong pin, two wires are swapped. If it shows up on more than one pin, they're shorted. Press the button and an OLED screen shows GOOD, or BAD with the exact fault (for example, "- &lt;-&gt; +" for a swapped pair), so anyone on the line can use it without a multimeter.</li>
+              <li><strong>Other manufacturing tools</strong> — also built a custom ammeter logger, homing jig guides for the arms, and assembly guides to help speed up production.</li>
             </ul>
             <p>Learn more about Ultra: <a href="https://ultra.tech" target="_blank" rel="noopener">ultra.tech</a></p>
             <div class="image-gallery">
+              <img src="./images/thumbs/Ultra/op1-base-box.jpg" data-full="./images/Ultra/op1-base-box.jpg" alt="The OP1 base box I designed, under an Ultra robot arm" loading="lazy" decoding="async">
               <img src="./images/thumbs/Ultra/MAX%20ROBOT%205.5.jpg" data-full="./images/Ultra/MAX%20ROBOT%205.5.jpg" alt="With the Ultra robot" loading="lazy" decoding="async">
-              <img src="./images/thumbs/Ultra/ultra%20photo%20collage.jpg" data-full="./images/Ultra/ultra%20photo%20collage.jpg" alt="Ultra Robotics internship photo collage" class="featured-image" loading="lazy" decoding="async">
               <img src="./images/thumbs/Ultra/team%20lunch.jpg" data-full="./images/Ultra/team%20lunch.jpg" alt="Ultra team lunch" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Ultra/ultra%20photo%20collage.jpg" data-full="./images/Ultra/ultra%20photo%20collage.jpg" alt="Ultra Robotics internship photo collage" class="featured-image" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
 
         <!-- Q Calc -->
-        <details class="project">
+        <details class="project" id="qcalc">
           <summary>
             <img src="./images/thumbs/QCalc/units.png" alt="Q Calc converting units" loading="lazy" decoding="async">
             <div class="card-label">
@@ -122,7 +124,7 @@
         </details>
 
         <!-- System on Chip: RISC-V Processor -->
-        <details class="project">
+        <details class="project" id="risc-v">
           <summary>
             <img src="./images/thumbs/SOC_project.jpg" alt="RISC-V pipeline diagram" loading="lazy" decoding="async">
             <div class="card-label">
@@ -140,7 +142,7 @@
         </details>
 
         <!-- FSAE -->
-        <details class="project">
+        <details class="project" id="fsae">
           <summary>
             <img src="./images/thumbs/FSAEChassis.jpeg" alt="FSAE chassis" loading="lazy" decoding="async">
             <div class="card-label">
@@ -163,7 +165,7 @@
         </details>
 
         <!-- Speaker -->
-        <details class="project">
+        <details class="project" id="speaker">
           <summary>
             <img src="./images/thumbs/Speaker/Speaker_image.jpeg" alt="Clear acrylic speaker" loading="lazy" decoding="async">
             <div class="card-label">
@@ -183,7 +185,7 @@
         </details>
 
         <!-- Custom Chopsticks -->
-        <details class="project">
+        <details class="project" id="chopsticks">
           <summary>
             <img src="./images/thumbs/Chopsticks/IMG_2182.jpeg" alt="Handmade lignum vitae chopsticks" loading="lazy" decoding="async">
             <div class="card-label">
@@ -205,7 +207,7 @@
         </details>
 
         <!-- ExploraVist -->
-        <details class="project">
+        <details class="project" id="exploravist">
           <summary>
             <img src="./images/thumbs/ExploraVist%20Device%20Image.png" alt="ExploraVist headset" loading="lazy" decoding="async">
             <div class="card-label">
@@ -230,7 +232,7 @@
         </details>
 
         <!-- FIRST Robotics 8013 -->
-        <details class="project">
+        <details class="project" id="first-robotics">
           <summary>
             <img src="./images/thumbs/OffseasonSwerve.jpeg" alt="FIRST Robotics offseason swerve robot" loading="lazy" decoding="async">
             <div class="card-label">
@@ -268,7 +270,7 @@
         </details>
 
         <!-- Backwards Bike -->
-        <details class="project">
+        <details class="project" id="backwards-bike">
           <summary>
             <img src="./images/thumbs/BackwardsBikeGear.jpeg" alt="Backwards bike reversing gear" loading="lazy" decoding="async">
             <div class="card-label">
@@ -288,7 +290,7 @@
         </details>
 
         <!-- Motorized Drift Trike -->
-        <details class="project">
+        <details class="project" id="drift-trike">
           <summary>
             <img src="./images/thumbs/DriftTrike.jpeg" alt="Motorized drift trike" loading="lazy" decoding="async">
             <div class="card-label">
@@ -314,7 +316,7 @@
         </details>
 
         <!-- Logic Demo Board -->
-        <details class="project">
+        <details class="project" id="logic-board">
           <summary>
             <img src="./images/thumbs/Board_front.jpeg" alt="Logic gate demo board" loading="lazy" decoding="async">
             <div class="card-label">
@@ -339,7 +341,7 @@
         </details>
 
         <!-- Guitar Making -->
-        <details class="project">
+        <details class="project" id="guitars">
           <summary>
             <img src="./images/thumbs/stick_guitar.jpeg" alt="Stick Guitar" loading="lazy" decoding="async">
             <div class="card-label">
@@ -364,7 +366,7 @@
         </details>
 
         <!-- FPV Drone Hobby -->
-        <details class="project">
+        <details class="project" id="fpv-drones">
           <summary>
             <img src="./images/thumbs/drone1.jpeg" alt="FPV drone" loading="lazy" decoding="async">
             <div class="card-label">
@@ -388,7 +390,7 @@
         </details>
 
         <!-- Bike Scooter -->
-        <details class="project">
+        <details class="project" id="bike-scooter">
           <summary>
             <img src="./images/thumbs/BikeScooter.jpeg" alt="Bike Scooter" loading="lazy" decoding="async">
             <div class="card-label">
@@ -408,7 +410,7 @@
         </details>
 
         <!-- Kart conversion -->
-        <details class="project">
+        <details class="project" id="go-kart">
           <summary>
             <img src="./images/thumbs/kart.jpeg" alt="Go kart conversion" loading="lazy" decoding="async">
             <div class="card-label">
@@ -433,7 +435,7 @@
         </details>
 
         <!-- Puzzle Club Table -->
-        <details class="project">
+        <details class="project" id="puzzle-table">
           <summary>
             <img src="./images/thumbs/PuzzleClubTable.jpeg" alt="Puzzle Club table" loading="lazy" decoding="async">
             <div class="card-label">
