@@ -102,26 +102,6 @@ projects.forEach(project => {
     // closing a long card above can push this one off-screen; bring it back
     if (project.getBoundingClientRect().top < headerHeight()) scrollToProject(project, false);
   });
-
-  // "Copy link" button at the bottom of each project
-  const details = project.querySelector('.project-details');
-  if (details && project.id) {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'copy-link';
-    btn.textContent = 'Copy link to this project';
-    btn.addEventListener('click', async () => {
-      const link = location.origin + location.pathname + '#' + project.id;
-      try {
-        await navigator.clipboard.writeText(link);
-        btn.textContent = 'Link copied!';
-      } catch {
-        btn.textContent = link;
-      }
-      setTimeout(() => { btn.textContent = 'Copy link to this project'; }, 2000);
-    });
-    details.appendChild(btn);
-  }
 });
 
 // Open the project named in the URL (on load, or when a #project link is followed)
