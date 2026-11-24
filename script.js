@@ -75,7 +75,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape')     closeLightbox();
 });
 
-// Projects: one open at a time, and each has its own link (e.g. maxconine.com/#qcalc)
+// Projects: each has its own link (e.g. maxconine.com/#qcalc)
 const projects = document.querySelectorAll('details.project');
 const headerHeight = () => document.querySelector('header').offsetHeight;
 
@@ -97,10 +97,7 @@ projects.forEach(project => {
       if (location.hash === '#' + project.id) setHash('');
       return;
     }
-    projects.forEach(other => { if (other !== project) other.open = false; });
     setHash('#' + project.id);
-    // closing a long card above can push this one off-screen; bring it back
-    if (project.getBoundingClientRect().top < headerHeight()) scrollToProject(project, false);
   });
 });
 
