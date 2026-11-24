@@ -215,7 +215,7 @@
             <p>The robot is a compact, neutrally buoyant, three-motor diver (roughly 7" × 8" × 5.5") built around a waterproof box. It carries an AS7343 spectral sensor that reads 12 wavelength channels from 405 to 855 nm, a pressure sensor for depth, a thermistor for water temperature, and a GoPro pointed up at the surface. A Teensy logs everything at 10 Hz.</p>
             <p>My parts of the project:</p>
             <ul>
-              <li><strong>Spectral sensor housing</strong> — I designed and machined a housing out of billet aluminum with a quartz glass window epoxied on top. Quartz passes over 98% of visible, UV, and infrared light, so the sensor stays dry at depth without filtering the wavelengths it's measuring.</li>
+              <li><strong>Spectral sensor housing</strong> — I helped design and machine a housing out of billet aluminum with a quartz glass window epoxied on top. We used quartz because it passes over 98% of visible, UV, and infrared light, so the sensor stays dry at depth without filtering the wavelengths it's measuring.</li>
               <li><strong>Spectral sensor</strong> — I wired the AS7343 to the Teensy over I2C and modified the manufacturer's code to turn off its onboard light and log all 12 channels every loop.</li>
               <li><strong>Robot and controls</strong> — I worked out the center of mass and ballast so the robot sits level and upright underwater, and wrote the depth controller. It steps down in 0.25 m increments to over 5 m, cutting the motors at each step for 7 seconds so motor noise doesn't corrupt the sensor readings. I also processed and plotted the dive data in MATLAB.</li>
             </ul>
