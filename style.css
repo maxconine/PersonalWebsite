@@ -361,4 +361,20 @@ footer {
 }
 .project summary img[src*="QCalc"] { background: #232325; object-fit: contain; object-position: center 12%; }
 
+/* plots and drawings: show the whole figure instead of cropping */
+.image-gallery.figures { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); }
+.image-gallery.figures img {
+  height: 130px;
+  object-fit: contain;
+  background: #fff;
+}
+
 .project { scroll-margin-top: 5rem; }
+
+/* report diagrams: show the whole figure instead of cropping */
+.image-gallery.diagrams { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+.image-gallery.diagrams img {
+  object-fit: contain;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+}

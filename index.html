@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Max Conine – Portfolio</title>
   <meta name="description" content="Explore engineering projects, music, and more by Max Conine.">
-  <meta name="keywords" content="Max Conine, engineering, projects, portfolio, music, mamak, QandM, Drift Trike, backwards bike, logic board, logic board demo, chopsticks, lignum vitae">
+  <meta name="keywords" content="Max Conine, engineering, projects, portfolio, music, mamak, QandM, Drift Trike, backwards bike, logic board, logic board demo, chopsticks, lignum vitae, E80, AUV, underwater robot">
   <meta name="author" content="Max Conine">
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -78,6 +78,64 @@
           </div>
         </details>
 
+        <!-- FSAE -->
+        <details class="project" id="fsae">
+          <summary>
+            <img src="./images/thumbs/FSAEChassis.jpeg" alt="FSAE chassis" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Harvey Mudd Racing FSAE Team</h3>
+              <p class="card-meta"><span class="card-date">2025–present</span> · Technical Lead · Onshape &amp; SolidWorks, TIG welding · Mudd's first FSAE car</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>As the elected Technical Lead, I oversee all technical aspects of the car — but what I love most is being in the thick of the build. From designing complex parts in SolidWorks and running simulations, to physically fabricating the chassis and TIG welding it together, I'm involved at every step. This project has been an incredible way to learn: there's nothing quite like the challenge of making sure every system talks to the next when you're the one building them. It's been a privilege to help bring Mudd's first-ever FSAE car to life.</p>
+            <p>Building the first iteration of the chassis taught us a lot, including that we had made some big mistakes in its design:</p>
+            <ul>
+              <li>It wouldn't have passed inspection under the FSAE Structural Equivalency Spreadsheet (SES).</li>
+              <li>It wasn't designed around the suspension pickup points, which would have given us bad suspension geometry.</li>
+              <li>It was heavier than it needed to be.</li>
+              <li>It warped from heat deformation during welding.</li>
+            </ul>
+            <p>So over the summer I redesigned the chassis from the ground up with my friend Oliver Flor, who focused on designing the suspension pickup points while I did the CAD modeling in Onshape. The first image below is the CAD model of the redesigned car.</p>
+            <p>The rest of the images show fabrication of the first chassis in progress. Check out our website <a href="https://harveymuddracing.com" target="_blank" rel="noopener">harveymuddracing.com</a> to learn more about the team and our progress.</p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/FSAECarCAD.jpeg" data-full="./images/FSAECarCAD.jpeg" alt="Full-car CAD model of the FSAE car: chassis, suspension, engine, and wheels" loading="lazy" decoding="async">
+              <img src="./images/thumbs/FSAEChassis.jpeg" data-full="./images/FSAEChassis.jpeg" alt="FSAE chassis fabrication in progress" loading="lazy" decoding="async">
+              <img src="./images/thumbs/FSAEChassisMaking.jpeg" data-full="./images/FSAEChassisMaking.jpeg" alt="Fabricating the FSAE chassis" loading="lazy" decoding="async">
+              <img src="./images/thumbs/ChassisRender.jpeg" data-full="./images/ChassisRender.jpeg" alt="Chassis CAD render" loading="lazy" decoding="async">
+              <img src="./images/thumbs/BendingMainHoopFSAE.jpeg" data-full="./images/BendingMainHoopFSAE.jpeg" alt="Bending the main hoop" loading="lazy" decoding="async">
+              <img src="./images/thumbs/ChassisProgress.jpeg" data-full="./images/ChassisProgress.jpeg" alt="Chassis progress in April" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Car_Selfie.jpeg" data-full="./images/Car_Selfie.jpeg" alt="Selfie with the chassis" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
+
+        <!-- Surfboard -->
+        <details class="project" id="surfboard">
+          <summary>
+            <img src="./images/thumbs/Surfboard/Surfboard_Cover.jpeg" alt="Max holding the CNC-machined foam surfboard" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>Surfboard</h3>
+              <p class="card-meta"><span class="card-date">Fall 2026</span> · Makerspace grant · AkuShaper &amp; Fusion 360 · CNC-machined foam blank</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>As a fun project, a friend and I set out to make our own surfboards, each of us building one. The Makerspace at my school gives students up to $300 for personal projects, which funded the build.</p>
+            <p>We started by visiting Foam EZ, a local board shaping shop. They were really nice: they gave us a tour of their shop, good advice on how to design and manufacture a board, and offered us foam blanks to cut our boards from, which we gladly took.</p>
+            <p>I designed my board, a 6'0" tri-fin board about 40 liters in volume, in the AkuShaper surfboard shaping software, then exported it as a .step file and imported it into Fusion 360 to program the toolpaths for the ShopBot CNC router.</p>
+            <p>Fixturing the board has been one of the hardest parts so far. I made custom foam wedges to support it and held it down temporarily with duct tape on both the wedges and the board, with epoxy in between. Zeroing was tricky too, since the board could shift in two degrees of freedom. I had to line everything up carefully, then remeasure the actual position and correct my CAD model so the board machined correctly.</p>
+            <p>The shape is now cut, and glassing it is the next step.</p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/Surfboard/Surfboard_Cover.jpeg" data-full="./images/Surfboard/Surfboard_Cover.jpeg" alt="Max holding the machined surfboard blank" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Surfboard/surfboard_cutting_2.jpeg" data-full="./images/Surfboard/surfboard_cutting_2.jpeg" alt="ShopBot CNC router machining the surfboard deck" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Surfboard/surfboard_cutting.jpeg" data-full="./images/Surfboard/surfboard_cutting.jpeg" alt="Partially machined board on the CNC bed" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Surfboard/fusion_toolpaths.png" data-full="./images/Surfboard/fusion_toolpaths.png" alt="Surfboard toolpaths in Fusion 360" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Surfboard/akushaper.png" data-full="./images/Surfboard/akushaper.png" alt="Board outline and dimensions in AkuShaper" loading="lazy" decoding="async">
+              <img src="./images/thumbs/Surfboard/akushaper2.png" data-full="./images/Surfboard/akushaper2.png" alt="Width, rocker, and thickness profiles in AkuShaper" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
+
         <!-- Q Calc -->
         <details class="project" id="qcalc">
           <summary>
@@ -123,56 +181,6 @@
           </div>
         </details>
 
-        <!-- System on Chip: RISC-V Processor -->
-        <details class="project" id="risc-v">
-          <summary>
-            <img src="./images/thumbs/SOC_project.jpg" alt="RISC-V pipeline diagram" loading="lazy" decoding="async">
-            <div class="card-label">
-              <h3>System on Chip RISC-V Processor</h3>
-              <p class="card-meta"><span class="card-date">Spring 2026</span> · SystemVerilog · Top CoreMark performance in class</p>
-            </div>
-          </summary>
-          <div class="project-details">
-            <p>For my System on Chip course, I designed and implemented a pipelined RISC-V processor in SystemVerilog, optimized for both speed and area efficiency. The processor features a classic five-stage pipeline — Fetch, Decode, Execute, Memory, and Writeback — complete with a hazard unit, data forwarding logic, and branch prediction to keep the pipeline moving. The challenge was a competitive CoreMark benchmark: maximize performance while minimizing silicon area. Balancing those two objectives forced careful decisions at every level of the design, from implementing a three-stage multiply unit to optimizing branch prediction, choosing compiler flags, and tuning hazard logic. My team achieved the best-performing processor in the class of 14 students.</p>
-            <p>Check out the project on GitHub: <a href="https://github.com/SystemOnChipTeam/SOC_Final_Proj" target="_blank" rel="noopener">SOC_Final_Proj</a></p>
-            <div class="image-gallery">
-              <img src="./images/thumbs/SOC_project.jpg" data-full="./images/SOC_project.jpg" alt="Pipelined RISC-V processor block diagram" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </details>
-
-        <!-- FSAE -->
-        <details class="project" id="fsae">
-          <summary>
-            <img src="./images/thumbs/FSAEChassis.jpeg" alt="FSAE chassis" loading="lazy" decoding="async">
-            <div class="card-label">
-              <h3>Harvey Mudd Racing FSAE Team</h3>
-              <p class="card-meta"><span class="card-date">2025–present</span> · Technical Lead · Onshape &amp; SolidWorks, TIG welding · Mudd's first FSAE car</p>
-            </div>
-          </summary>
-          <div class="project-details">
-            <p>As the elected Technical Lead, I oversee all technical aspects of the car — but what I love most is being in the thick of the build. From designing complex parts in SolidWorks and running simulations, to physically fabricating the chassis and TIG welding it together, I'm involved at every step. This project has been an incredible way to learn: there's nothing quite like the challenge of making sure every system talks to the next when you're the one building them. It's been a privilege to help bring Mudd's first-ever FSAE car to life.</p>
-            <p>Building the first iteration of the chassis taught us a lot, including that we had made some big mistakes in its design:</p>
-            <ul>
-              <li>It wouldn't have passed inspection under the FSAE Structural Equivalency Spreadsheet (SES).</li>
-              <li>It wasn't designed around the suspension pickup points, which would have given us bad suspension geometry.</li>
-              <li>It was heavier than it needed to be.</li>
-              <li>It warped from heat deformation during welding.</li>
-            </ul>
-            <p>So over the summer I redesigned the chassis from the ground up with my friend Oliver Flor, who focused on designing the suspension pickup points while I did the CAD modeling in Onshape. The first image below is the CAD model of the redesigned car.</p>
-            <p>The rest of the images show fabrication of the first chassis in progress. Check out our website <a href="https://harveymuddracing.com" target="_blank" rel="noopener">harveymuddracing.com</a> to learn more about the team and our progress.</p>
-            <div class="image-gallery">
-              <img src="./images/thumbs/FSAECarCAD.jpeg" data-full="./images/FSAECarCAD.jpeg" alt="Full-car CAD model of the FSAE car: chassis, suspension, engine, and wheels" loading="lazy" decoding="async">
-              <img src="./images/thumbs/FSAEChassis.jpeg" data-full="./images/FSAEChassis.jpeg" alt="FSAE chassis fabrication in progress" loading="lazy" decoding="async">
-              <img src="./images/thumbs/FSAEChassisMaking.jpeg" data-full="./images/FSAEChassisMaking.jpeg" alt="Fabricating the FSAE chassis" loading="lazy" decoding="async">
-              <img src="./images/thumbs/ChassisRender.jpeg" data-full="./images/ChassisRender.jpeg" alt="Chassis CAD render" loading="lazy" decoding="async">
-              <img src="./images/thumbs/BendingMainHoopFSAE.jpeg" data-full="./images/BendingMainHoopFSAE.jpeg" alt="Bending the main hoop" loading="lazy" decoding="async">
-              <img src="./images/thumbs/ChassisProgress.jpeg" data-full="./images/ChassisProgress.jpeg" alt="Chassis progress in April" loading="lazy" decoding="async">
-              <img src="./images/thumbs/Car_Selfie.jpeg" data-full="./images/Car_Selfie.jpeg" alt="Selfie with the chassis" loading="lazy" decoding="async">
-            </div>
-          </div>
-        </details>
-
         <!-- Speaker -->
         <details class="project" id="speaker">
           <summary>
@@ -189,6 +197,76 @@
               <img src="./images/thumbs/Speaker/speaker_cad.png" data-full="./images/Speaker/speaker_cad.png" alt="CAD model of the speaker enclosure" loading="lazy" decoding="async">
               <img src="./images/thumbs/Speaker/speaker_cad_front.png" data-full="./images/Speaker/speaker_cad_front.png" alt="Front view CAD model of the speaker" loading="lazy" decoding="async">
               <img src="./images/thumbs/Speaker/speaker_selfie.jpeg" data-full="./images/Speaker/speaker_selfie.jpeg" alt="Max with the finished speaker" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
+
+        <!-- E80 Underwater Robot -->
+        <details class="project" id="e80-auv">
+          <summary>
+            <img src="./images/thumbs/E80/switch_on.jpeg" alt="Max switching on the underwater robot from a paddleboard at Dana Point" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>E80 Underwater Robot</h3>
+              <p class="card-meta"><span class="card-date">Spring 2026</span> · Autonomous diving robot · 12-channel spectral sensor · Machined aluminum &amp; quartz housing</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>For E80, Harvey Mudd's experimental engineering course, my team built an autonomous underwater vehicle (AUV) to measure how sunlight fades with depth in the ocean. Water absorbs and scatters each color of light differently, so tracking the intensity of each wavelength as you dive tells you something about how clear the water is and what's in it.</p>
+            <p>The robot is a compact, neutrally buoyant, three-motor diver (roughly 7" × 8" × 5.5") built around a waterproof box. It carries an AS7343 spectral sensor that reads 12 wavelength channels from 405 to 855 nm, a pressure sensor for depth, a thermistor for water temperature, and a GoPro pointed up at the surface. A Teensy logs everything at 10 Hz.</p>
+            <p>My parts of the project:</p>
+            <ul>
+              <li><strong>Spectral sensor housing</strong> — I designed and machined a housing out of billet aluminum with a quartz glass window epoxied on top. Quartz passes over 98% of visible, UV, and infrared light, so the sensor stays dry at depth without filtering the wavelengths it's measuring.</li>
+              <li><strong>Spectral sensor</strong> — I wired the AS7343 to the Teensy over I2C and modified the manufacturer's code to turn off its onboard light and log all 12 channels every loop.</li>
+              <li><strong>Robot and controls</strong> — I worked out the center of mass and ballast so the robot sits level and upright underwater, and wrote the depth controller. It steps down in 0.25 m increments to over 5 m, cutting the motors at each step for 7 seconds so motor noise doesn't corrupt the sensor readings. I also processed and plotted the dive data in MATLAB.</li>
+            </ul>
+            <p>We deployed the robot over 20 times: leak tests in the tank room, first spectral readings in a pool, a 3 m dive in a lake, and finally six-plus dives off kayaks and paddleboards at Dana Point. The data showed longer wavelengths fading faster than shorter ones, as the Beer-Lambert law predicts, with 745 nm and 855 nm dropping off the most. The pressure sensor gave reliable depth on every dive. The thermistor didn't survive full submersion in salt water, and the GoPro's auto-exposure skewed its colors, both lessons for next time.</p>
+            <p>Read the full <a href="./files/E80_Final_Report.pdf" target="_blank" rel="noopener">final report (PDF)</a>.</p>
+            <div class="image-gallery">
+              <img src="./images/thumbs/E80/switch_on.jpeg" data-full="./images/E80/switch_on.jpeg" alt="Switching the robot on from a paddleboard before a dive at Dana Point" class="featured-image" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/robot_surface.jpeg" data-full="./images/E80/robot_surface.jpeg" alt="The robot at the surface at the start of a dive, spectral sensor on top" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/gopro_frame.jpeg" data-full="./images/E80/gopro_frame.jpeg" alt="GoPro frame looking up from underwater, with the sun in the corner" loading="lazy" decoding="async">
+            </div>
+            <div class="image-gallery figures">
+              <img src="./images/thumbs/E80/robot_labeled.jpeg" data-full="./images/E80/robot_labeled.jpeg" alt="The finished robot with its sensors and components labeled" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/sensor_housing.jpeg" data-full="./images/E80/sensor_housing.jpeg" alt="The machined aluminum sensor housing before and after the quartz window was epoxied on" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/housing_drawing.jpeg" data-full="./images/E80/housing_drawing.jpeg" alt="Drawing of the spectral sensor housing" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/spectral_vs_beer_lambert.jpeg" data-full="./images/E80/spectral_vs_beer_lambert.jpeg" alt="Measured light intensity by wavelength vs depth, next to the Beer-Lambert prediction" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/spectral_4_trials.jpeg" data-full="./images/E80/spectral_4_trials.jpeg" alt="Light intensity by wavelength across four dives at Dana Point" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/depth_control.jpeg" data-full="./images/E80/depth_control.jpeg" alt="Robot depth stepping down in 0.25 m increments vs target depth" loading="lazy" decoding="async">
+              <img src="./images/thumbs/E80/pressure_circuit.jpeg" data-full="./images/E80/pressure_circuit.jpeg" alt="Pressure sensor buffer and offset amplifier circuit" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </details>
+
+        <!-- System on Chip: RISC-V Processor -->
+        <details class="project" id="risc-v">
+          <summary>
+            <img src="./images/thumbs/SOC_project.jpg" alt="RISC-V pipeline diagram" loading="lazy" decoding="async">
+            <div class="card-label">
+              <h3>System on Chip RISC-V Processor</h3>
+              <p class="card-meta"><span class="card-date">Spring 2026</span> · SystemVerilog · Top CoreMark performance in class</p>
+            </div>
+          </summary>
+          <div class="project-details">
+            <p>For my System on Chip course, I designed and implemented a pipelined RISC-V processor in SystemVerilog, optimized for both speed and area efficiency. The processor features a classic five-stage pipeline — Fetch, Decode, Execute, Memory, and Writeback — complete with a hazard unit, data forwarding logic, and branch prediction to keep the pipeline moving. The challenge was a competitive CoreMark benchmark: maximize performance while minimizing silicon area. Balancing those two objectives forced careful decisions at every level of the design, from implementing a three-stage multiply unit to optimizing branch prediction, choosing compiler flags, and tuning hazard logic. My team achieved the best-performing processor in the class of 14 students.</p>
+            <p>I built it with my teammate Pierce Clark. A few highlights from our report:</p>
+            <ul>
+              <li><strong>Pipelining</strong> cut the critical path from 8.24 ns in the original single-cycle processor to 5.10 ns.</li>
+              <li><strong>A three-stage multiply unit</strong> keeps the partial-product math off the critical path. It costs two extra cycles per multiply but makes every other instruction faster.</li>
+              <li><strong>Factored branch logic</strong> takes advantage of how RISC-V encodes branch types, shrinking it from about 60 transistors to about 36.</li>
+              <li><strong>Branch prediction:</strong> we tried a branch target buffer, but it added area and lengthened the critical path, so we replaced it with a lightweight predictor that always takes backward branches.</li>
+              <li>The final processor scored ten times higher than the original processor, with an execution time 62.4% faster.</li>
+            </ul>
+            <p>Read the full <a href="./files/SOC-Final-Project-Report.pdf" target="_blank" rel="noopener">final report (PDF)</a>, or check out the project on GitHub: <a href="https://github.com/SystemOnChipTeam/SOC_Final_Proj" target="_blank" rel="noopener">SOC_Final_Proj</a></p>
+            <div class="image-gallery diagrams">
+              <img src="./images/thumbs/SOC_project.jpg" data-full="./images/SOC_project.jpg" alt="Pipelined RISC-V processor block diagram" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/top-level.png" data-full="./images/SOC/top-level.png" alt="Top-level block diagram of the five-stage pipeline and hazard unit" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/multiply-unit.png" data-full="./images/SOC/multiply-unit.png" alt="Three-stage multiply unit" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/branch-logic.png" data-full="./images/SOC/branch-logic.png" alt="Factored branch logic" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/hazard-unit.png" data-full="./images/SOC/hazard-unit.png" alt="Hazard unit logic" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/branch-predictor.png" data-full="./images/SOC/branch-predictor.png" alt="Backwards branch predictor" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/btb-critical-path.png" data-full="./images/SOC/btb-critical-path.png" alt="Critical path through the branch target buffer design" loading="lazy" decoding="async">
+              <img src="./images/thumbs/SOC/area-breakdown.png" data-full="./images/SOC/area-breakdown.png" alt="Area breakdown by module: register file and multiplier take up most of it" loading="lazy" decoding="async">
             </div>
           </div>
         </details>
